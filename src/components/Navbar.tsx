@@ -1,0 +1,149 @@
+import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+import { Language, languageNames } from '../i18n/translations';
+import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+
+const Navbar: React.FC = () => {
+  const { t, language, setLanguage } = useLanguage();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: '#home', label: t('nav.home') },
+    { href: '#about', label: t('nav.about') },
+    { href: '#services', label: t('nav.services') },
+    { href: '#testimonials', label: t('nav.testimonials') },
+    { href: '#contact', label: t('nav.contact') },
+  ];
+
+  const scrollTo = (href: string) => {
+    setIsMobileOpen(false);
+    const el = document.querySelector(href);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
+            <span className="text-2xl font-display font-bold tracking-tight">
+              <span className={isScrolled ? 'text-foreground' : 'text-white'}>Fundus</span>
+              <span className="text-gradient-gold"> Certus</span>
+            </span>
+          </button>
+
+          {/* Desktop nav */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-accent ${
+                  isScrolled ? 'text-foreground/70' : 'text-white/80'
+                }`}
+              >
+                {link.label}
+              </button>
+            ))}
+
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                  isScrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'
+                }`}
+              >
+                <Globe className="w-4 h-4" />
+                <span className="uppercase">{language}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isLangOpen && (
+                <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[160px]">
+                  {(Object.keys(languageNames) as Language[]).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => {
+                        setLanguage(lang);
+                        setIsLangOpen(false);
+                      }}
+                      className={`block w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-secondary ${
+                        language === lang ? 'text-accent font-semibold bg-secondary' : 'text-foreground/80'
+                      }`}
+                    >
+                      {languageNames[lang]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
+          >
+            {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <div
+        className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          isMobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="bg-card/95 backdrop-blur-md border-t border-border px-4 py-4 space-y-1">
+          {navLinks.map((link) => (
+            <button
+              key={link.href}
+              onClick={() => scrollTo(link.href)}
+              className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-accent hover:bg-secondary rounded-lg transition-colors"
+            >
+              {link.label}
+            </button>
+          ))}
+          <div className="border-t border-border pt-3 mt-3">
+            <div className="flex flex-wrap gap-2 px-4">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => {
+                    setLanguage(lang);
+                    setIsMobileOpen(false);
+                  }}
+                  className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
+                    language === lang
+                      ? 'bg-accent text-accent-foreground border-accent'
+                      : 'border-border text-foreground/60 hover:border-accent'
+                  }`}
+                >
+                  {languageNames[lang]}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
