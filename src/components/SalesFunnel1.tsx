@@ -14,19 +14,12 @@ const SalesFunnel1: React.FC = () => {
 
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-dark">
-      {/* Subtle pattern */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px),
                            linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
           backgroundSize: '80px 80px',
-        }}
-      />
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `radial-gradient(ellipse at 80% 30%, hsl(38 100% 50% / 0.12) 0%, transparent 60%)`,
         }}
       />
 
@@ -45,6 +38,7 @@ const SalesFunnel1: React.FC = () => {
           <p className="text-white/50 font-body max-w-2xl mx-auto">{t('funnel1.subtitle')}</p>
         </AnimatedSection>
 
+        {/* LAYOUT: 3 columns with numbered cards and arrows — GRID CARDS */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.2}>

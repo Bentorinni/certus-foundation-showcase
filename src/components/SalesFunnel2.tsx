@@ -29,9 +29,8 @@ const SalesFunnel2: React.FC = () => {
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">{t('funnel2.subtitle')}</p>
         </AnimatedSection>
 
-        {/* Vertical timeline */}
+        {/* LAYOUT: Vertical timeline — alternating left/right */}
         <div className="relative max-w-3xl mx-auto">
-          {/* Timeline line */}
           <div className="absolute left-8 top-0 bottom-0 w-px bg-border md:left-1/2" />
 
           {steps.map((step, i) => (
@@ -43,12 +42,11 @@ const SalesFunnel2: React.FC = () => {
             >
               <div className={`flex items-start gap-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <div className={`bg-card border border-border rounded-xl p-6 ml-16 md:ml-0 transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.06)]`}>
+                  <div className="bg-card border border-border rounded-xl p-6 ml-16 md:ml-0 transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.06)]">
                     <h3 className="text-lg font-display font-semibold mb-2">{step.title}</h3>
                     <p className="text-muted-foreground font-body text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
-                {/* Node */}
                 <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-8 h-8 rounded-full bg-gradient-gold flex items-center justify-center z-10 shadow-[0_0_20px_hsl(38_100%_50%/0.3)]">
                   <step.icon className="w-4 h-4 text-accent-foreground" />
                 </div>
