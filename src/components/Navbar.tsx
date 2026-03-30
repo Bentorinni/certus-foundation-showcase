@@ -2,15 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Language, languageNames } from '../i18n/translations';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar: React.FC = () => {
   const { t, language, setLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('#home');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      const sections = ['#home', '#about', '#services', '#testimonials', '#contact'];
+      let current = '#home';
+      for (const id of sections) {
+        const el = document.querySelector(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 120) current = id;
+        }
+      }
+      setActiveSection(current);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -41,7 +56,14 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-            <span className="text-2xl font-display font-bold tracking-tight">
+            <img
+              src={logo}
+              alt="Fundus Certus"
+              className={`h-10 w-10 object-contain transition-all duration-300 ${
+                isScrolled ? '' : 'brightness-0 invert'
+              }`}
+            />
+            <span className="text-xl font-display font-bold tracking-tight">
               <span className={isScrolled ? 'text-foreground' : 'text-white'}>Fundus</span>
               <span className="text-gradient-gold"> Certus</span>
             </span>
@@ -53,11 +75,18 @@ const Navbar: React.FC = () => {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-accent ${
-                  isScrolled ? 'text-foreground/70' : 'text-white/80'
+                className={`relative text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
+                  activeSection === link.href
+                    ? 'text-accent'
+                    : isScrolled
+                    ? 'text-foreground/70 hover:text-accent'
+                    : 'text-white/80 hover:text-accent'
                 }`}
               >
                 {link.label}
+                {activeSection === link.href && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-gold rounded-full" />
+                )}
               </button>
             ))}
 
@@ -115,7 +144,11 @@ const Navbar: React.FC = () => {
             <button
               key={link.href}
               onClick={() => scrollTo(link.href)}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-accent hover:bg-secondary rounded-lg transition-colors"
+              className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                activeSection === link.href
+                  ? 'text-accent bg-secondary'
+                  : 'text-foreground/80 hover:text-accent hover:bg-secondary'
+              }`}
             >
               {link.label}
             </button>

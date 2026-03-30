@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
 import { Shield, Award, Scale } from 'lucide-react';
+import aboutBg from '../assets/about-bg.jpg';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -53,33 +54,19 @@ const About: React.FC = () => {
             </AnimatedSection>
           </div>
 
-          {/* Right column - decorative */}
+          {/* Right column - real estate photo */}
           <AnimatedSection direction="right" delay={0.3}>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl bg-gradient-dark overflow-hidden relative">
-                <div
-                  className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage: `radial-gradient(circle at 30% 40%, hsl(38 100% 50% / 0.3) 0%, transparent 50%),
-                                     radial-gradient(circle at 70% 70%, hsl(38 100% 50% / 0.15) 0%, transparent 50%)`,
-                  }}
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
+                <img
+                  src={aboutBg}
+                  alt="Modern real estate interior"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={800}
+                  height={1000}
                 />
-                <div
-                  className="absolute inset-0 opacity-[0.04]"
-                  style={{
-                    backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px),
-                                     linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px',
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl font-display font-bold text-gradient-gold opacity-30">FC</div>
-                    <div className="mt-4 text-white/30 text-sm font-body tracking-[0.3em] uppercase">
-                      Est. 2009
-                    </div>
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </div>
               {/* Decorative border */}
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 rounded-2xl -z-10" />
