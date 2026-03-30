@@ -96,6 +96,34 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.address': 'Adres biura',
     'contact.addressValue': 'ul. Przykładowa 10, 00-001 Warszawa',
 
+    // Funnel 3 - Kupno nieruchomości
+    'funnel3.tag': 'Kupno nieruchomości',
+    'funnel3.title': 'Znajdź Idealną Nieruchomość',
+    'funnel3.subtitle': 'Przeprowadzimy Cię przez cały proces zakupu — od wyszukania ofert po podpisanie aktu notarialnego',
+    'funnel3.step1.title': 'Wyszukiwanie ofert',
+    'funnel3.step1.desc': 'Przeszukujemy rynek w poszukiwaniu nieruchomości dopasowanych do Twoich wymagań i budżetu',
+    'funnel3.step2.title': 'Analiza prawna',
+    'funnel3.step2.desc': 'Weryfikacja stanu prawnego, due diligence i sprawdzenie dokumentacji nieruchomości',
+    'funnel3.step3.title': 'Negocjacje i transakcja',
+    'funnel3.step3.desc': 'Profesjonalne negocjacje cenowe i pełna obsługa procesu zakupu z notariuszem',
+    'funnel3.step4.title': 'Zarządzanie po zakupie',
+    'funnel3.step4.desc': 'Wsparcie w zarządzaniu nabytą nieruchomością, wynajem lub dalsze inwestycje',
+    'funnel3.cta': 'Szukam nieruchomości',
+
+    // Funnel 4 - Sprzedaż i wynajem
+    'funnel4.tag': 'Sprzedaż i wynajem',
+    'funnel4.title': 'Sprzedaj lub Wynajmij z Zyskiem',
+    'funnel4.subtitle': 'Maksymalizujemy wartość Twojej nieruchomości dzięki sprawdzonym strategiom sprzedaży i wynajmu',
+    'funnel4.step1.title': 'Wycena rynkowa',
+    'funnel4.step1.desc': 'Profesjonalna wycena nieruchomości oparta na aktualnych danych rynkowych i trendach',
+    'funnel4.step2.title': 'Strategia marketingowa',
+    'funnel4.step2.desc': 'Przygotowanie oferty, sesja fotograficzna i promocja w najlepszych kanałach',
+    'funnel4.step3.title': 'Selekcja kontrahentów',
+    'funnel4.step3.desc': 'Weryfikacja potencjalnych kupujących lub najemców pod kątem wiarygodności',
+    'funnel4.step4.title': 'Finalizacja umowy',
+    'funnel4.step4.desc': 'Przygotowanie dokumentacji, obsługa notarialna i bezpieczne zamknięcie transakcji',
+    'funnel4.cta': 'Chcę sprzedać lub wynająć',
+
     // Footer
     'footer.rights': 'Wszelkie prawa zastrzeżone.',
     'footer.license': 'Licencja pośrednika nr 11751 — Ministerstwo Infrastruktury RP',
