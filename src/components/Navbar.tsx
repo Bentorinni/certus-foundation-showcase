@@ -14,7 +14,6 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
       const sections = ['#home', '#about', '#services', '#testimonials', '#contact'];
       let current = '#home';
       for (const id of sections) {
@@ -40,8 +39,7 @@ const Navbar: React.FC = () => {
 
   const scrollTo = (href: string) => {
     setIsMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -56,13 +54,15 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-            <img
-              src={logo}
-              alt="Fundus Certus"
-              className={`h-10 w-10 object-contain transition-all duration-300 ${
-                isScrolled ? '' : 'brightness-0 invert'
-              }`}
-            />
+            <div className={`h-10 w-10 rounded-full flex items-center justify-center p-1 ${
+              isScrolled ? 'bg-foreground' : 'bg-white'
+            }`}>
+              <img
+                src={logo}
+                alt="Fundus Certus"
+                className="h-full w-full object-contain"
+              />
+            </div>
             <span className="text-xl font-display font-bold tracking-tight">
               <span className={isScrolled ? 'text-foreground' : 'text-white'}>Fundus</span>
               <span className="text-gradient-gold"> Certus</span>
@@ -107,10 +107,7 @@ const Navbar: React.FC = () => {
                   {(Object.keys(languageNames) as Language[]).map((lang) => (
                     <button
                       key={lang}
-                      onClick={() => {
-                        setLanguage(lang);
-                        setIsLangOpen(false);
-                      }}
+                      onClick={() => { setLanguage(lang); setIsLangOpen(false); }}
                       className={`block w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-secondary ${
                         language === lang ? 'text-accent font-semibold bg-secondary' : 'text-foreground/80'
                       }`}
@@ -123,7 +120,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
@@ -134,11 +131,9 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile menu */}
-      <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
+      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
+        isMobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+      }`}>
         <div className="bg-card/95 backdrop-blur-md border-t border-border px-4 py-4 space-y-1">
           {navLinks.map((link) => (
             <button
@@ -158,10 +153,7 @@ const Navbar: React.FC = () => {
               {(Object.keys(languageNames) as Language[]).map((lang) => (
                 <button
                   key={lang}
-                  onClick={() => {
-                    setLanguage(lang);
-                    setIsMobileOpen(false);
-                  }}
+                  onClick={() => { setLanguage(lang); setIsMobileOpen(false); }}
                   className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
                     language === lang
                       ? 'bg-accent text-accent-foreground border-accent'

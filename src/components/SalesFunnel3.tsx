@@ -15,14 +15,6 @@ const SalesFunnel3: React.FC = () => {
 
   return (
     <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px',
-        }}
-      />
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -38,25 +30,29 @@ const SalesFunnel3: React.FC = () => {
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">{t('funnel3.subtitle')}</p>
         </AnimatedSection>
 
-        {/* Horizontal process */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* LAYOUT: 2x2 grid with large numbered badges — distinct from other funnels */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <div className="relative group">
-                <div className="bg-card border border-border rounded-xl p-6 h-full transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.08)]">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center mb-4 shadow-[0_0_20px_hsl(38_100%_50%/0.2)]">
-                    <step.icon className="w-6 h-6 text-accent-foreground" />
+              <div className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_40px_hsl(38_100%_50%/0.08)]">
+                {/* Large step number background */}
+                <div className="absolute top-4 right-6 text-7xl font-display font-bold text-accent/[0.07] leading-none select-none">
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-5 shadow-[0_0_20px_hsl(38_100%_50%/0.2)] group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-7 h-7 text-accent-foreground" />
                   </div>
-                  <div className="text-xs text-accent font-semibold tracking-wider uppercase mb-2 font-body">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  <h3 className="text-lg font-display font-semibold mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-display font-semibold mb-3">{step.title}</h3>
                   <p className="text-muted-foreground font-body text-sm leading-relaxed">{step.desc}</p>
                 </div>
+                {/* Connecting line to next card */}
                 {i < 3 && (
-                  <div className="hidden lg:flex absolute top-1/2 -right-3 z-10">
-                    <ArrowRight className="w-6 h-6 text-accent/30" />
-                  </div>
+                  <div className={`absolute ${
+                    i % 2 === 0
+                      ? 'hidden md:block right-0 top-1/2 w-8 h-px bg-accent/20 translate-x-full'
+                      : 'hidden'
+                  }`} />
                 )}
               </div>
             </AnimatedSection>
