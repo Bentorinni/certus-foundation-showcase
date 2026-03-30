@@ -2,14 +2,26 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
 import { ArrowRight, Building2 } from 'lucide-react';
+import heroBg from '../assets/hero-bg.jpg';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-dark" />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroBg}
+          alt=""
+          className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-background/80" />
+      </div>
+
+      {/* Accent glow */}
       <div
         className="absolute inset-0 opacity-30"
         style={{
