@@ -132,7 +132,7 @@
 }
 
 .logo-spin-3d {
-  animation: spin3d 6s linear infinite;
+  animation: spin3d 12s linear infinite;
   transform-style: preserve-3d;
 }
 

@@ -122,12 +122,12 @@ const Contact: React.FC = () => {
               </div>
 
               {/* QR Code */}
-              <div className="flex items-center gap-4 p-4 rounded-lg bg-secondary border border-border">
-                <img src={qrCode} alt="QR Code - Fundus Certus" className="w-24 h-24 object-contain" />
-                <div>
-                  <p className="font-semibold text-sm font-body">{t('contact.phone')}</p>
-                  <p className="text-muted-foreground text-xs font-body">Zeskanuj kod QR</p>
+              <div className="relative p-6 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group text-center">
+                <div className="inline-block p-3 bg-white rounded-xl shadow-md mb-3 group-hover:shadow-accent/20 transition-shadow">
+                  <img src={qrCode} alt="QR Code - Fundus Certus" className="w-28 h-28 object-contain" />
                 </div>
+                <p className="font-display font-bold text-base mb-1">📱 Zeskanuj mnie!</p>
+                <p className="text-muted-foreground text-xs font-body">Szybki dostęp do kontaktu z nami</p>
               </div>
 
               {/* Google Maps */}
