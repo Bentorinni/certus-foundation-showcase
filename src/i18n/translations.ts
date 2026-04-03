@@ -299,6 +299,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.success': 'Nachricht erfolgreich gesendet!',
     'contact.address': 'Büroadresse',
     'contact.addressValue': 'ul. J. Ligęzy 12, 40-551 Katowice, Polen',
+    'contact.qrTitle': 'Scanne mich!',
+    'contact.qrSubtitle': 'Schneller Zugang zur Kontaktaufnahme',
     'funnel3.tag': 'Immobilienkauf',
     'funnel3.title': 'Finden Sie Ihre Traumimmobilie',
     'funnel3.subtitle': 'Wir begleiten Sie durch den gesamten Kaufprozess — von der Angebotssuche bis zur notariellen Beurkundung',
