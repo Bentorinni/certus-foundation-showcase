@@ -125,6 +125,21 @@
   }
 }
 
+/* 3D spinning logo */
+@keyframes spin3d {
+  0% { transform: perspective(600px) rotateY(0deg); }
+  100% { transform: perspective(600px) rotateY(360deg); }
+}
+
+.logo-spin-3d {
+  animation: spin3d 6s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.logo-spin-3d:hover {
+  animation-duration: 2s;
+}
+
 html {
   scroll-behavior: smooth;
 }

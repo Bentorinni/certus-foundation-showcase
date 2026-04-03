@@ -2,31 +2,24 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
 import { ArrowRight, Building2 } from 'lucide-react';
-import heroBg from '../assets/hero-bg2.jpg';
+import SpinningGlobe from './SpinningGlobe';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image — dark, visible */}
-      <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover"
-          width={1920}
-          height={1080}
-        />
-        {/* Dark overlay — enough to read text but image is visible */}
-        <div className="absolute inset-0 bg-black/55" />
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-primary">
+      {/* Spinning Globe Background */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-30">
+        <SpinningGlobe />
       </div>
 
-      {/* Accent glow */}
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary" />
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(ellipse at 70% 50%, hsl(38 100% 50% / 0.1) 0%, transparent 60%)`,
+          backgroundImage: `radial-gradient(ellipse at 70% 50%, hsl(38 100% 50% / 0.12) 0%, transparent 60%)`,
         }}
       />
 
@@ -42,13 +35,13 @@ const Hero: React.FC = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-white leading-[1.1] mb-8 drop-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-primary-foreground leading-[1.1] mb-8 drop-shadow-lg">
               {t('hero.title')}
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={0.4}>
-            <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-12 max-w-2xl font-body drop-shadow-md">
+            <p className="text-lg sm:text-xl text-primary-foreground/80 leading-relaxed mb-12 max-w-2xl font-body drop-shadow-md">
               {t('hero.subtitle')}
             </p>
           </AnimatedSection>
@@ -64,7 +57,7 @@ const Hero: React.FC = () => {
               </button>
               <button
                 onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group border border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:border-accent/50 hover:text-accent backdrop-blur-sm bg-white/5 font-body"
+                className="group border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:border-accent/50 hover:text-accent backdrop-blur-sm bg-primary-foreground/5 font-body"
               >
                 {t('hero.cta2')}
                 <Building2 className="w-4 h-4" />
