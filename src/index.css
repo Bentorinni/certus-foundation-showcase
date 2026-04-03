@@ -136,9 +136,6 @@
   transform-style: preserve-3d;
 }
 
-.logo-spin-3d:hover {
-  animation-duration: 2s;
-}
 
 html {
   scroll-behavior: smooth;

@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
                 <div className="inline-block p-3 bg-white rounded-xl shadow-md mb-3 group-hover:shadow-accent/20 transition-shadow">
                   <img src={qrCode} alt="QR Code - Fundus Certus" className="w-28 h-28 object-contain" />
                 </div>
-                <p className="font-display font-bold text-base mb-1">📱 Zeskanuj mnie!</p>
+                <p className="font-display font-bold text-base mb-1">Zeskanuj mnie!</p>
                 <p className="text-muted-foreground text-xs font-body">Szybki dostęp do kontaktu z nami</p>
               </div>
 
