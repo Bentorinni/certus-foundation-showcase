@@ -3,6 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
 import { Send, MapPin, Phone, Mail } from 'lucide-react';
 import { toast } from 'sonner';
+import qrCode from '../assets/qr-code.png';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
