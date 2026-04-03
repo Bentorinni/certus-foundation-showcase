@@ -200,6 +200,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.success': 'Message sent successfully!',
     'contact.address': 'Office address',
     'contact.addressValue': 'ul. J. Ligęzy 12, 40-551 Katowice, Poland',
+    'contact.qrTitle': 'Scan me!',
+    'contact.qrSubtitle': 'Quick access to contact us',
     'funnel3.tag': 'Property purchase',
     'funnel3.title': 'Find Your Perfect Property',
     'funnel3.subtitle': 'We guide you through the entire purchase process — from finding offers to signing the notarial deed',
