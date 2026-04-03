@@ -497,6 +497,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.success': 'Сообщение отправлено успешно!',
     'contact.address': 'Адрес офиса',
     'contact.addressValue': 'ул. Й. Лигензы 12, 40-551 Катовице, Польша',
+    'contact.qrTitle': 'Сканируй меня!',
+    'contact.qrSubtitle': 'Быстрый доступ к контактам',
     'funnel3.tag': 'Покупка недвижимости',
     'funnel3.title': 'Найдите Идеальную Недвижимость',
     'funnel3.subtitle': 'Мы проведём вас через весь процесс покупки — от поиска предложений до подписания нотариального акта',
