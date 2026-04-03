@@ -54,14 +54,14 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-            <div className="h-12 w-12 rounded-full flex items-center justify-center p-1 logo-spin-3d">
+            <div className="h-16 w-16 rounded-full flex items-center justify-center p-1 logo-spin-3d">
               <img
                 src={logo}
                 alt="Fundus Certus"
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="text-2xl font-display font-bold tracking-tight">
+            <span className="text-3xl font-display font-extrabold tracking-tight">
               <span className={isScrolled ? 'text-foreground' : 'text-white'}>Fundus</span>
               <span className="text-gradient-gold"> Certus</span>
             </span>

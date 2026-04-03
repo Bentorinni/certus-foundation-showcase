@@ -100,31 +100,40 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <a
-                  href="tel:+48221234567"
+                  href="tel:+48793747447"
                   className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border hover:border-accent/50 transition-colors group"
                 >
                   <Phone className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
                     <p className="font-semibold text-sm font-body">Telefon</p>
-                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">+48 22 123 45 67</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">+48 793 747 447</p>
                   </div>
                 </a>
                 <a
-                  href="mailto:kontakt@funduscertus.pl"
+                  href="mailto:funduscertus@gmail.com"
                   className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border hover:border-accent/50 transition-colors group"
                 >
                   <Mail className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
                     <p className="font-semibold text-sm font-body">E-mail</p>
-                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">kontakt@funduscertus.pl</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">funduscertus@gmail.com</p>
                   </div>
                 </a>
+              </div>
+
+              {/* QR Code */}
+              <div className="flex items-center gap-4 p-4 rounded-lg bg-secondary border border-border">
+                <img src={qrCode} alt="QR Code - Fundus Certus" className="w-24 h-24 object-contain" />
+                <div>
+                  <p className="font-semibold text-sm font-body">{t('contact.phone')}</p>
+                  <p className="text-muted-foreground text-xs font-body">Zeskanuj kod QR</p>
+                </div>
               </div>
 
               {/* Google Maps */}
               <div className="rounded-xl overflow-hidden border border-border h-[280px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.35438500028!2d20.8506885!3d52.2330769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f0be2a88ead3fc!2sWarszawa!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2551.5!2d19.0258!3d50.2471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce2336a1ccd1%3A0x123456789!2sul.+J.+Lig%C4%99zy+12%2C+40-551+Katowice!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
