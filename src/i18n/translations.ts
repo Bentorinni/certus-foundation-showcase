@@ -95,6 +95,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.success': 'Wiadomość wysłana pomyślnie!',
     'contact.address': 'Adres biura',
     'contact.addressValue': 'ul. J. Ligęzy 12, 40-551 Katowice',
+    'contact.qrTitle': 'Zeskanuj mnie!',
+    'contact.qrSubtitle': 'Szybki dostęp do kontaktu z nami',
 
     // Funnel 3 - Kupno nieruchomości
     'funnel3.tag': 'Kupno nieruchomości',
