@@ -98,20 +98,26 @@ const Contact: React.FC = () => {
                     <p className="text-muted-foreground text-sm font-body">{t('contact.addressValue')}</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border">
+                <a
+                  href="tel:+48221234567"
+                  className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border hover:border-accent/50 transition-colors group"
+                >
                   <Phone className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
                     <p className="font-semibold text-sm font-body">Telefon</p>
-                    <p className="text-muted-foreground text-sm font-body">+48 22 123 45 67</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">+48 22 123 45 67</p>
                   </div>
-                </div>
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border">
+                </a>
+                <a
+                  href="mailto:kontakt@funduscertus.pl"
+                  className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border hover:border-accent/50 transition-colors group"
+                >
                   <Mail className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
                     <p className="font-semibold text-sm font-body">E-mail</p>
-                    <p className="text-muted-foreground text-sm font-body">kontakt@funduscertus.pl</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">kontakt@funduscertus.pl</p>
                   </div>
-                </div>
+                </a>
               </div>
 
               {/* Google Maps */}
