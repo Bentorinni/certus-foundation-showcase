@@ -94,7 +94,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.send': 'Wyślij wiadomość',
     'contact.success': 'Wiadomość wysłana pomyślnie!',
     'contact.address': 'Adres biura',
-    'contact.addressValue': 'ul. Przykładowa 10, 00-001 Warszawa',
+    'contact.addressValue': 'ul. J. Ligęzy 12, 40-551 Katowice',
 
     // Funnel 3 - Kupno nieruchomości
     'funnel3.tag': 'Kupno nieruchomości',
