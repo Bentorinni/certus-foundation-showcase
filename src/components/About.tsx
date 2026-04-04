@@ -32,10 +32,21 @@ const About: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection direction="left" delay={0.2}>
-              <div className="space-y-5 text-muted-foreground font-body leading-relaxed">
-                <p>{t('about.p1')}</p>
-                <p>{t('about.p2')}</p>
-                <p>{t('about.p3')}</p>
+              <div className="space-y-6">
+                {/* First paragraph — highlighted as key statement */}
+                <div className="relative pl-5 border-l-2 border-accent">
+                  <p className="text-foreground font-body text-lg leading-relaxed font-medium">
+                    {t('about.p1')}
+                  </p>
+                </div>
+
+                {/* Remaining paragraphs — normal style but more readable */}
+                <p className="text-muted-foreground font-body leading-relaxed text-base">
+                  {t('about.p2')}
+                </p>
+                <p className="text-muted-foreground font-body leading-relaxed text-base">
+                  {t('about.p3')}
+                </p>
               </div>
             </AnimatedSection>
 

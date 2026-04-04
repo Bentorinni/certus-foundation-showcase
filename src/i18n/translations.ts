@@ -129,6 +129,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     'footer.rights': 'Wszelkie prawa zastrzeżone.',
     'footer.license': 'Licencja pośrednika nr 11751 — Ministerstwo Infrastruktury RP',
+    'footer.privacy': 'Polityka prywatności',
   },
 
   en: {
@@ -228,6 +229,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'I want to sell or rent',
     'footer.rights': 'All rights reserved.',
     'footer.license': 'Broker license no. 11751 — Ministry of Infrastructure of Poland',
+    'footer.privacy': 'Privacy Policy',
   },
 
   de: {
@@ -327,6 +329,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'Verkaufen oder vermieten',
     'footer.rights': 'Alle Rechte vorbehalten.',
     'footer.license': 'Maklerlizenz Nr. 11751 — Ministerium für Infrastruktur der Republik Polen',
+    'footer.privacy': 'Datenschutzrichtlinie',
   },
 
   it: {
@@ -426,6 +429,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'Voglio vendere o affittare',
     'footer.rights': 'Tutti i diritti riservati.',
     'footer.license': 'Licenza broker n. 11751 — Ministero delle Infrastrutture della Polonia',
+    'footer.privacy': 'Informativa sulla privacy',
   },
 
   ru: {
@@ -525,5 +529,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'Хочу продать или сдать',
     'footer.rights': 'Все права защищены.',
     'footer.license': 'Лицензия брокера № 11751 — Министерство инфраструктуры Польши',
+    'footer.privacy': 'Политика конфиденциальности',
   },
 };
