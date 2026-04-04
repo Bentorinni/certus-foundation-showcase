@@ -41,14 +41,9 @@ const SalesFunnel4: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <div className="group glass rounded-xl p-8 h-full flex flex-col transition-all duration-500 hover:border-accent/30">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                    <step.icon className="w-7 h-7 text-accent" />
-                  </div>
-                  <span className="text-accent/40 text-xs font-bold tracking-[0.3em] uppercase font-body">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+              <div className="group glass rounded-xl p-8 h-full flex flex-col transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.1)]">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300 mb-4">
+                  <step.icon className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="text-lg font-display font-semibold text-white mb-2">{step.title}</h3>
                 <p className="text-white/45 font-body text-sm leading-relaxed flex-1">{step.desc}</p>

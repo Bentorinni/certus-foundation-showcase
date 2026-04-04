@@ -32,13 +32,13 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 145 100% 45%;
+    --ring: 142 100% 50%;
 
     --radius: 0.5rem;
 
-    --gold: 145 100% 45%;
-    --gold-light: 150 90% 55%;
-    --gold-dark: 140 100% 35%;
+    --gold: 142 100% 50%;
+    --gold-light: 145 100% 60%;
+    --gold-dark: 138 100% 38%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
