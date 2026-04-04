@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `radial-gradient(ellipse at 70% 50%, hsl(38 100% 50% / 0.12) 0%, transparent 60%)`,
+          backgroundImage: `radial-gradient(ellipse at 70% 50%, hsl(145 100% 45% / 0.12) 0%, transparent 60%)`,
         }}
       />
 
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group bg-gradient-gold text-accent-foreground px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.3)] hover:scale-[1.02] font-body"
+                  className="group bg-gradient-gold text-accent-foreground px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(145_100%_45%/0.3)] hover:scale-[1.02] font-body"
                 >
                   {t('hero.cta')}
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

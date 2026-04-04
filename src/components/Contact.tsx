@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="group w-full bg-gradient-gold text-accent-foreground py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.3)] hover:scale-[1.01] font-body"
+                  className="group w-full bg-gradient-gold text-accent-foreground py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(145_100%_45%/0.3)] hover:scale-[1.01] font-body"
                 >
                   <Send className="w-4 h-4" />
                   {t('contact.send')}

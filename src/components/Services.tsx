@@ -34,7 +34,7 @@ const Services: React.FC = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_hsl(38_100%_50%/0.08)]">
+              <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_hsl(145_100%_45%/0.08)]">
                 <div className="w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
                   <service.icon className="w-6 h-6 text-accent-foreground" />
                 </div>
