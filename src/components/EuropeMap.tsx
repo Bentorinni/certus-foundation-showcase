@@ -36,7 +36,7 @@ const EuropeMap: React.FC = () => {
         style={{ shapeRendering: "geometricPrecision" }}
       >
         {paths.map((d, i) => (
-          <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="hsla(38,60%,45%,0.06)" />
         ))}
       </svg>
     </div>
