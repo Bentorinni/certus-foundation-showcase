@@ -85,8 +85,8 @@ const SpinningGlobe: React.FC = () => {
           if (!started) { ctx.moveTo(x, y); started = true; }
           else ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = 'hsla(38, 70%, 50%, 0.06)';
-        ctx.lineWidth = 0.3;
+        ctx.strokeStyle = 'hsla(38, 70%, 50%, 0.1)';
+        ctx.lineWidth = 0.5;
         ctx.stroke();
       }
 
