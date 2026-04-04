@@ -36,8 +36,8 @@ const SpinningGlobe: React.FC = () => {
 
       // Outer glow
       const glow = ctx.createRadialGradient(cx, cy, r * 0.5, cx, cy, r * 1.25);
-      glow.addColorStop(0, 'hsla(145, 100%, 45%, 0.06)');
-      glow.addColorStop(0.6, 'hsla(145, 100%, 45%, 0.02)');
+      glow.addColorStop(0, 'hsla(142, 100%, 50%, 0.06)');
+      glow.addColorStop(0.6, 'hsla(142, 100%, 50%, 0.02)');
       glow.addColorStop(1, 'transparent');
       ctx.fillStyle = glow;
       ctx.fillRect(0, 0, w, h);
@@ -45,14 +45,14 @@ const SpinningGlobe: React.FC = () => {
       // Globe circle
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.strokeStyle = 'hsla(145, 100%, 45%, 0.2)';
+      ctx.strokeStyle = 'hsla(142, 100%, 50%, 0.2)';
       ctx.lineWidth = 0.5;
       ctx.stroke();
 
       // Inner gradient
       const innerGrad = ctx.createRadialGradient(cx - r * 0.3, cy - r * 0.3, 0, cx, cy, r);
-      innerGrad.addColorStop(0, 'hsla(145, 100%, 50%, 0.04)');
-      innerGrad.addColorStop(1, 'hsla(145, 100%, 50%, 0.005)');
+      innerGrad.addColorStop(0, 'hsla(142, 100%, 55%, 0.04)');
+      innerGrad.addColorStop(1, 'hsla(142, 100%, 55%, 0.005)');
       ctx.fillStyle = innerGrad;
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
@@ -65,7 +65,7 @@ const SpinningGlobe: React.FC = () => {
         const rx = Math.cos(latR) * r;
         ctx.beginPath();
         ctx.ellipse(cx, y, rx, Math.max(rx * 0.04, 0.5), 0, 0, Math.PI * 2);
-        ctx.strokeStyle = `hsla(145, 100%, 45%, ${lat === 0 ? 0.18 : 0.1})`;
+        ctx.strokeStyle = `hsla(142, 100%, 50%, ${lat === 0 ? 0.18 : 0.1})`;
         ctx.lineWidth = lat === 0 ? 0.8 : 0.5;
         ctx.stroke();
       }
@@ -85,7 +85,7 @@ const SpinningGlobe: React.FC = () => {
           if (!started) { ctx.moveTo(x, y); started = true; }
           else ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = 'hsla(145, 100%, 45%, 0.1)';
+        ctx.strokeStyle = 'hsla(142, 100%, 50%, 0.1)';
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
@@ -100,7 +100,7 @@ const SpinningGlobe: React.FC = () => {
           if (z3d < 0.05) continue;
           ctx.beginPath();
           ctx.arc(cx + x3d * r, cy - Math.sin(latR) * r, 1.2, 0, Math.PI * 2);
-          ctx.fillStyle = `hsla(145, 100%, 50%, ${0.12 + z3d * 0.25})`;
+          ctx.fillStyle = `hsla(142, 100%, 55%, ${0.12 + z3d * 0.25})`;
           ctx.fill();
         }
       }
