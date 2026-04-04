@@ -37,29 +37,32 @@ const SalesFunnel4: React.FC = () => {
           <p className="text-white/50 font-body max-w-2xl mx-auto">{t('funnel4.subtitle')}</p>
         </AnimatedSection>
 
-        {/* LAYOUT: Horizontal steps with connected line — single row process bar */}
-        <div className="relative mb-16">
-          {/* Connection line */}
-          <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px bg-accent/20" />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 items-stretch">
-            {steps.map((step, i) => (
-              <AnimatedSection key={i} delay={i * 0.15}>
-                <div className="text-center relative">
-                  {/* Circle icon on the line */}
-                  <div className="w-20 h-20 rounded-full bg-gradient-gold mx-auto mb-6 flex items-center justify-center shadow-[0_0_30px_hsl(38_100%_50%/0.25)] relative z-10">
-                    <step.icon className="w-9 h-9 text-accent-foreground" />
+        {/* LAYOUT: Stacked horizontal cards with left accent bar */}
+        <div className="space-y-6 max-w-4xl mx-auto mb-16">
+          {steps.map((step, i) => (
+            <AnimatedSection key={i} delay={i * 0.15} direction="left">
+              <div className="group flex items-stretch gap-0 transition-all duration-500">
+                {/* Accent bar */}
+                <div className="w-1.5 rounded-l-xl bg-gradient-gold flex-shrink-0 group-hover:w-2 transition-all duration-300" />
+                
+                {/* Card */}
+                <div className="flex-1 glass rounded-r-xl p-6 md:p-8 flex items-center gap-6 group-hover:border-accent/20 transition-all duration-500">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
+                    <step.icon className="w-7 h-7 text-accent" />
                   </div>
-                  {/* Step number */}
-                  <div className="text-accent text-xs font-bold tracking-[0.3em] uppercase mb-3 font-body">
-                    {String(i + 1).padStart(2, '0')}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-accent/40 text-xs font-bold tracking-[0.3em] uppercase font-body">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className="text-lg font-display font-semibold text-white">{step.title}</h3>
+                    </div>
+                    <p className="text-white/45 font-body text-sm leading-relaxed">{step.desc}</p>
                   </div>
-                  <h3 className="text-lg font-display font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-white/45 font-body text-sm leading-relaxed max-w-xs mx-auto">{step.desc}</p>
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
 
         <AnimatedSection delay={0.7} className="text-center">
