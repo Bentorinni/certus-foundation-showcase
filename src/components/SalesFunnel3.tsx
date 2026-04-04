@@ -36,11 +36,8 @@ const SalesFunnel3: React.FC = () => {
             <AnimatedSection key={i} delay={i * 0.15} direction={i % 2 === 0 ? 'left' : 'right'}>
               <div className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Icon block */}
-                <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-[0_0_40px_hsl(145_100%_45%/0.15)] relative">
+                <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-[0_0_40px_hsl(142_100%_50%/0.2)] relative">
                   <step.icon className="w-12 h-12 md:w-16 md:h-16 text-accent-foreground" />
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-secondary border border-border flex items-center justify-center text-xs font-bold font-display text-accent">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
                 </div>
 
                 {/* Content */}
@@ -63,7 +60,7 @@ const SalesFunnel3: React.FC = () => {
         <AnimatedSection delay={0.6} className="text-center">
           <button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(145_100%_45%/0.3)] hover:scale-[1.02] font-body"
+            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(142_100%_50%/0.3)] hover:scale-[1.02] font-body"
           >
             {t('funnel3.cta')}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

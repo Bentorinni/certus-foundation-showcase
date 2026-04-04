@@ -41,14 +41,9 @@ const SalesFunnel4: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <div className="group glass rounded-xl p-8 h-full flex flex-col transition-all duration-500 hover:border-accent/30">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                    <step.icon className="w-7 h-7 text-accent" />
-                  </div>
-                  <span className="text-accent/40 text-xs font-bold tracking-[0.3em] uppercase font-body">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+              <div className="group glass rounded-xl p-8 h-full flex flex-col transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.1)]">
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300 mb-4">
+                  <step.icon className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="text-lg font-display font-semibold text-white mb-2">{step.title}</h3>
                 <p className="text-white/45 font-body text-sm leading-relaxed flex-1">{step.desc}</p>
@@ -60,7 +55,7 @@ const SalesFunnel4: React.FC = () => {
         <AnimatedSection delay={0.7} className="text-center">
           <button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(145_100%_45%/0.3)] hover:scale-[1.02] font-body"
+            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(142_100%_50%/0.3)] hover:scale-[1.02] font-body"
           >
             {t('funnel4.cta')}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
