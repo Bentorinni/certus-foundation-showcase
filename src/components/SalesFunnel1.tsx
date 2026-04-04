@@ -25,7 +25,7 @@ const SalesFunnel1: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two-column hero layout: text left, visual right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20">
           {/* Left: headline + CTA */}
           <AnimatedSection direction="left">
             <div className="flex items-center gap-2 mb-4">

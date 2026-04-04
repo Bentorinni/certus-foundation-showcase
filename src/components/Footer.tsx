@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
         {/* Top: Logo + Nav */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
           <div>
-            <span className="text-2xl font-display font-bold">
+            <span className="text-xl sm:text-2xl font-display font-bold">
               FUNDUS <span className="text-gradient-gold">CERTUS</span>
             </span>
             <p className="text-xs text-primary-foreground/40 font-body mt-2">

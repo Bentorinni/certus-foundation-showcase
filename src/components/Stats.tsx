@@ -58,7 +58,7 @@ const Stats: React.FC = () => {
                 transition: `all 0.6s ease-out ${i * 0.15}s`,
               }}
             >
-              <div className="text-4xl sm:text-5xl font-display font-bold text-gradient-gold mb-2">
+              <div className="text-3xl sm:text-5xl font-display font-bold text-gradient-gold mb-2">
                 <Counter target={stat.value} isVisible={isInView} />
               </div>
               <p className="text-sm text-muted-foreground font-body tracking-wide uppercase">

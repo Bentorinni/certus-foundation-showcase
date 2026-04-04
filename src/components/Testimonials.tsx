@@ -61,7 +61,7 @@ const Testimonials: React.FC = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((item, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
               <div className="relative glass rounded-xl p-8 h-full group hover:border-accent/30 transition-all duration-500">
