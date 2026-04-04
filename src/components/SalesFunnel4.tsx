@@ -18,7 +18,7 @@ const SalesFunnel4: React.FC = () => {
       <div
         className="absolute inset-0 opacity-20"
         style={{
-          backgroundImage: `radial-gradient(ellipse at 20% 60%, hsl(38 100% 50% / 0.1) 0%, transparent 60%)`,
+          backgroundImage: `radial-gradient(ellipse at 20% 60%, hsl(145 100% 45% / 0.1) 0%, transparent 60%)`,
         }}
       />
 
@@ -37,29 +37,21 @@ const SalesFunnel4: React.FC = () => {
           <p className="text-white/50 font-body max-w-2xl mx-auto">{t('funnel4.subtitle')}</p>
         </AnimatedSection>
 
-        {/* LAYOUT: Stacked horizontal cards with left accent bar */}
-        <div className="space-y-6 max-w-4xl mx-auto mb-16">
+        {/* LAYOUT: 2x2 grid — equal width boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
           {steps.map((step, i) => (
-            <AnimatedSection key={i} delay={i * 0.15} direction="left">
-              <div className="group flex items-stretch gap-0 transition-all duration-500">
-                {/* Accent bar */}
-                <div className="w-1.5 rounded-l-xl bg-gradient-gold flex-shrink-0 group-hover:w-2 transition-all duration-300" />
-                
-                {/* Card */}
-                <div className="flex-1 glass rounded-r-xl p-6 md:p-8 flex items-center gap-6 group-hover:border-accent/20 transition-all duration-500">
+            <AnimatedSection key={i} delay={i * 0.15}>
+              <div className="group glass rounded-xl p-8 h-full flex flex-col transition-all duration-500 hover:border-accent/30">
+                <div className="flex items-center gap-4 mb-4">
                   <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
                     <step.icon className="w-7 h-7 text-accent" />
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-accent/40 text-xs font-bold tracking-[0.3em] uppercase font-body">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <h3 className="text-lg font-display font-semibold text-white">{step.title}</h3>
-                    </div>
-                    <p className="text-white/45 font-body text-sm leading-relaxed">{step.desc}</p>
-                  </div>
+                  <span className="text-accent/40 text-xs font-bold tracking-[0.3em] uppercase font-body">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                 </div>
+                <h3 className="text-lg font-display font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-white/45 font-body text-sm leading-relaxed flex-1">{step.desc}</p>
               </div>
             </AnimatedSection>
           ))}
@@ -68,7 +60,7 @@ const SalesFunnel4: React.FC = () => {
         <AnimatedSection delay={0.7} className="text-center">
           <button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(38_100%_50%/0.3)] hover:scale-[1.02] font-body"
+            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(145_100%_45%/0.3)] hover:scale-[1.02] font-body"
           >
             {t('funnel4.cta')}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

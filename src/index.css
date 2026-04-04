@@ -24,7 +24,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 38 100% 55%;
+    --accent: 145 100% 45%;
     --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,13 +32,13 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 38 100% 55%;
+    --ring: 145 100% 45%;
 
     --radius: 0.5rem;
 
-    --gold: 38 100% 55%;
-    --gold-light: 43 96% 68%;
-    --gold-dark: 35 100% 42%;
+    --gold: 145 100% 45%;
+    --gold-light: 150 90% 55%;
+    --gold-dark: 140 100% 35%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -63,13 +63,13 @@
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 14%;
     --muted-foreground: 0 0% 60%;
-    --accent: 38 100% 55%;
+    --accent: 145 100% 45%;
     --accent-foreground: 0 0% 5%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 38 100% 55%;
+    --ring: 145 100% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -98,14 +98,14 @@
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(38 100% 55%), hsl(43 96% 68%));
+    background: linear-gradient(135deg, hsl(145 100% 45%), hsl(150 90% 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-gold {
-    background: linear-gradient(135deg, hsl(38 100% 55%), hsl(43 96% 68%));
+    background: linear-gradient(135deg, hsl(145 100% 45%), hsl(150 90% 55%));
   }
 
   .bg-gradient-dark {
