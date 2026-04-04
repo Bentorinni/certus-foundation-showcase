@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 const Index: React.FC = () => {
   return (
     <LanguageProvider>
-      <div className="min-h-screen">
+      <div className="min-h-screen pt-14 sm:pt-20">
         <Navbar />
         <Hero />
         <Stats />
