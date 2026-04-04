@@ -29,7 +29,7 @@ const EuropeMap: React.FC = () => {
 
       {/* Traced Europe contours */}
       <svg
-        className="relative z-10 w-[92%] h-[92%]"
+        className="relative z-10 w-full h-full"
         viewBox="0 0 600 500"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
