@@ -1,176 +1,92 @@
 import React from 'react';
+import europeMapImg from '@/assets/europe-map.png';
 
 const EuropeMap: React.FC = () => {
-  // Geo coordinates converted to SVG viewBox (lon/lat -> x/y)
-  // ViewBox covers roughly lon -12..45, lat 34..72
-  // x = (lon + 12) * (400/57), y = (72 - lat) * (300/38)
-  const geoToSvg = (lon: number, lat: number): string => {
-    const x = (lon + 12) * (400 / 57);
-    const y = (72 - lat) * (300 / 38);
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  };
+  // Katowice approximate position on the map image (percentage)
+  const katowice = { x: 55, y: 42 };
 
-  const toPath = (coords: [number, number][], close = true): string => {
-    return coords.map((c, i) => `${i === 0 ? 'M' : 'L'}${geoToSvg(c[0], c[1])}`).join(' ') + (close ? ' Z' : '');
-  };
-
-  // Portugal
-  const portugal: [number, number][] = [
-    [-9.5,37],[-8.8,36.8],[-7.5,37.2],[-7,38],[-7.3,38.8],[-8,39.5],[-8.2,40],[-7.8,40.5],[-8,41],[-8.5,41.8],[-8.8,42],[-9.5,41.5],[-9.8,40.8],[-9.5,40],[-9.8,39],[-9.5,38],[-9.5,37]
+  const cities = [
+    { x: 38, y: 48, label: "" },   // Paris
+    { x: 44, y: 40, label: "" },   // Berlin
+    { x: 28, y: 60, label: "" },   // Madrid
+    { x: 48, y: 62, label: "" },   // Rome
+    { x: 62, y: 68, label: "" },   // Athens
+    { x: 30, y: 30, label: "" },   // London
+    { x: 48, y: 18, label: "" },   // Stockholm
+    { x: 60, y: 20, label: "" },   // Helsinki
+    { x: 72, y: 38, label: "" },   // Kyiv
   ];
-
-  // Spain
-  const spain: [number, number][] = [
-    [-9.5,37],[-8.8,36.8],[-7.5,36.5],[-6,36.5],[-5.5,36],[-5,36.2],[-4,36.7],[-3,36.8],[-2,36.8],[-1.5,37.5],[-0.5,37.8],[0,38.5],[0.5,38.8],[1,39],[1.5,39.5],[2,39.8],[3,40],[3.2,41],[3,42],[2,42.5],[1,42.8],[0,42.8],[-1,43],[-2,43.3],[-3,43.4],[-4,43.3],[-5,43.5],[-6,43.6],[-7,43.8],[-8,43.5],[-8.5,43],[-8.8,42],[-8.5,41.8],[-8,41],[-7.8,40.5],[-8,40],[-8.2,39.5],[-7.3,38.8],[-7,38],[-7.5,37.2],[-8.8,36.8],[-9.5,37]
-  ];
-
-  // France
-  const france: [number, number][] = [
-    [-1,43],[-0.5,43.3],[0,42.8],[1,42.8],[2,42.5],[3,42],[3.2,41.5],[3.5,42],[4,43],[4.5,43.5],[5,43.5],[5.5,43.2],[6,43.5],[6.5,43],[7,43.5],[7.5,44],[7,44.5],[6.8,45],[7,45.5],[6.5,46],[6,46.5],[6.2,47],[6,47.5],[5.5,47.8],[5,48],[4,48.5],[3,48.8],[2,49],[1.5,49.5],[1.8,50],[2,50.5],[2.5,51],[1.8,50.8],[1,50.2],[0.5,49.5],[0,49.2],[-0.5,48.8],[-1,48.5],[-1.5,48.8],[-2,48.5],[-3,48.8],[-4,48.5],[-4.5,48.2],[-5,48.5],[-4.5,48],[-3.5,47.8],[-3,47.5],[-2.5,47.2],[-2,47],[-1.5,46.5],[-1,46],[-1.2,45.5],[-1,45],[-1.2,44.5],[-1,44],[-1,43]
-  ];
-
-  // Italy
-  const italy: [number, number][] = [
-    [7.5,44],[8,44.2],[8.5,44.5],[9,44.5],[9.5,44.2],[10,44.5],[10.5,44.2],[11,44.5],[11.5,44.2],[12,44],[12.5,44.2],[13,44],[13.5,43.8],[13.8,43.5],[14,42.8],[14.5,42.2],[15,41.5],[15.5,41],[16,40.5],[16.5,40],[16.2,39.5],[16,39],[15.8,38.5],[16,38],[15.5,38.2],[15,38],[14.5,38.5],[14,38.2],[13.5,38],[13,37.8],[12.5,37.5],[13,37.5],[13.5,37.2],[14,37],[14.5,36.8],[15,37],[15.5,37.5],[16,38],[16.5,38],[17,38.5],[17.5,39],[18,39.5],[18.5,40],[18,40.5],[17,40.8],[16.5,41],[16,41.5],[15.5,42],[15,42.5],[14.5,42.8],[14,43.2],[13.5,43.8],[13,44],[12.8,44.5],[12.5,45],[12,45.5],[11.5,46],[11,46.5],[10.5,46.8],[10,46.8],[9.5,46.5],[9,46.5],[8.5,46],[8,46],[7.5,45.5],[7,45.5],[6.8,45],[7,44.5],[7.5,44]
-  ];
-
-  // Germany
-  const germany: [number, number][] = [
-    [6,47.5],[6.2,47],[6.5,46],[7,45.5],[7.5,45.5],[8,46],[8.5,46],[9,46.5],[9.5,46.5],[10,46.8],[10.5,47],[11,47.2],[12,47.5],[13,47.5],[13.5,48],[14,48.5],[14.5,49],[15,49.5],[15,50],[14.8,50.5],[14.5,51],[14.8,51.5],[14.5,52],[14.2,52.5],[14,53],[13.5,53.5],[13,54],[12.5,54.2],[12,54.5],[11,54.5],[10.5,54.2],[10,54.5],[9.5,54.8],[9,54.5],[8.5,54.8],[8,54.5],[7.5,54],[7,53.5],[6.8,53],[7,52.5],[6.5,52],[6,51.8],[5.8,51.5],[6,51],[6.2,50.5],[6,50],[6.5,49.5],[6.8,49],[6.5,48.5],[6,48],[6,47.5]
-  ];
-
-  // Poland (highlighted)
-  const poland: [number, number][] = [
-    [14,54],[14.2,53.5],[14,53],[14.2,52.5],[14.5,52],[14.2,51.5],[14.5,51],[14.8,50.5],[15,50],[15,49.5],[16,49.5],[17,49.2],[18,49.5],[19,49.5],[20,49.3],[21,49.5],[22,49.2],[23,49.5],[24,50],[24,50.5],[23.8,51],[23.5,51.5],[23.8,52],[24,52.5],[23.5,53],[23,53.5],[22,54],[21,54.5],[20,54.5],[19.5,54.2],[19,54.5],[18.5,54.8],[18,54.5],[17,54.8],[16,54.5],[15,54.2],[14.5,54.2],[14,54]
-  ];
-
-  // UK (Great Britain)
-  const uk: [number, number][] = [
-    [-5.5,50],[-5,50.2],[-4,50.5],[-3,50.8],[-2,51],[-1,51],[0,51.2],[1,51.5],[1.5,52],[1,52.5],[0.5,52.8],[0,53],[-0.5,53.5],[-1,54],[-1.5,54.5],[-2,55],[-2.5,55.5],[-3,56],[-3.5,56.5],[-4,57],[-4.5,57.5],[-5,57.8],[-5.5,58],[-5,58.5],[-5.5,58.8],[-6,58.5],[-5.5,57.5],[-5,57],[-5.5,56.5],[-5,56],[-4.5,55.5],[-4.8,55],[-4.5,54.5],[-3.5,54.2],[-3,54],[-3.5,53.5],[-4,53],[-4.5,52.5],[-5,52],[-5.5,51.5],[-5,51],[-5.5,50.5],[-5.5,50]
-  ];
-
-  // Ireland
-  const ireland: [number, number][] = [
-    [-6,52.5],[-6.5,52],[-7,51.5],[-8,51.8],[-9,51.5],[-10,51.8],[-10.5,52.2],[-10,52.8],[-10.5,53.2],[-10,53.5],[-9.5,54],[-8.5,54.5],[-8,55],[-7,55.5],[-6.5,55],[-6,54.5],[-6.5,54],[-6,53.5],[-6,52.5]
-  ];
-
-  // Scandinavia (Norway/Sweden simplified)
-  const scandinavia: [number, number][] = [
-    [5,58],[5.5,58.5],[6,59],[5.5,59.5],[6,60],[6.5,60.5],[5,61],[5.5,62],[6,63],[7,63.5],[8,63],[9,63.5],[10,64],[11,64.5],[12,65],[13,65.5],[14,66],[15,67],[16,67.5],[17,68],[18,68.5],[19,69],[20,69.5],[21,69.8],[22,70],[23,70.2],[25,70],[27,70.5],[29,70.2],[30,69.5],[29,69],[28,68.5],[27,68],[26,67],[25,66.5],[24,66],[23,65],[22,64],[21,63.5],[20,63],[19,62.5],[18.5,62],[18,61.5],[17.5,61],[17,60.5],[16.5,60],[16,59.5],[15.5,59],[15,58.5],[14,58],[13,57.5],[12.5,57],[12,56.5],[12.5,56],[12,55.5],[11,55.5],[10.5,55],[10,55.5],[9.5,55],[9,55.5],[8.5,55],[8,55.5],[7,57],[6,57.5],[5,58]
-  ];
-
-  // Finland
-  const finland: [number, number][] = [
-    [21,59.5],[22,59.8],[23,60],[24,60.5],[25,61],[26,61.5],[27,62],[28,62.5],[29,63],[30,64],[30,65],[29.5,66],[29,67],[28.5,68],[28,69],[29,69],[30,69.5],[29,70.2],[27,70.5],[25,70],[23,70.2],[22,70],[21,69.8],[20,69.5],[21,69],[22,68],[23,67],[24,66],[23,65],[22,64],[21,63.5],[20,63],[20.5,62],[21,61.5],[21,60.5],[21,59.5]
-  ];
-
-  // Balkans (simplified)
-  const balkans: [number, number][] = [
-    [13.5,46],[14,45.5],[15,45.2],[16,45],[17,45.2],[18,45],[19,44.5],[20,44],[21,44.5],[22,44],[22.5,43.5],[23,43],[24,42.5],[25,42],[26,41.5],[26.5,41],[26,40.5],[25,40],[24,39.5],[23.5,39],[23,38.5],[22,38],[21.5,37.8],[22,37.5],[23,37],[24,37],[25,37.5],[26,38],[26.5,39],[27,39.5],[28,40],[28.5,41],[28,41.5],[27,42],[26.5,42.5],[26,43],[25.5,43.5],[25,44],[24,44.5],[23,44.8],[22,44.5],[21,44.5],[20,44.8],[19,45],[18,45.5],[17,45.5],[16,45.8],[15,46],[14,46.2],[13.5,46]
-  ];
-
-  // Baltic states / Eastern Europe
-  const balticEast: [number, number][] = [
-    [21,54.5],[22,54],[23,53.5],[24,53],[24,52.5],[23.8,52],[23.5,51.5],[23.8,51],[24,50.5],[25,50.5],[26,51],[27,51.5],[28,52],[29,52.5],[30,53],[30,54],[29,55],[28,56],[27,57],[26,57.5],[25,58],[24,58.5],[23,59],[22,59.5],[21,59.5],[21,59],[21.5,58.5],[22,58],[21.5,57.5],[21,57],[20.5,56.5],[20,56],[19.5,55.5],[20,55],[20.5,54.5],[21,54.5]
-  ];
-
-  const polandCenter = geoToSvg(19, 52);
-  const [pcx, pcy] = polandCenter.split(',').map(Number);
-
-  const cityCoords: { lon: number; lat: number; highlight: boolean; label?: string }[] = [
-    { lon: 19, lat: 50.3, highlight: true, label: "Katowice" },
-    { lon: 10, lat: 51, highlight: false },
-    { lon: 2, lat: 48.8, highlight: false },
-    { lon: -3.5, lat: 40, highlight: false },
-    { lon: 12.5, lat: 42, highlight: false },
-    { lon: 24, lat: 38, highlight: false },
-    { lon: 15, lat: 63, highlight: false },
-    { lon: -1, lat: 52, highlight: false },
-    { lon: 25, lat: 60, highlight: false },
-  ];
-
-  const cities = cityCoords.map(c => {
-    const [x, y] = geoToSvg(c.lon, c.lat).split(',').map(Number);
-    return { ...c, x, y };
-  });
-
-  const katowice = cities[0];
 
   return (
-    <svg
-      viewBox="0 0 400 300"
-      className="w-full h-full max-w-[500px] max-h-[500px]"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ shapeRendering: 'geometricPrecision' }}
-    >
-      {/* Grid */}
-      {Array.from({ length: 10 }).map((_, i) => (
-        <line key={`h${i}`} x1="0" y1={i * 30} x2="400" y2={i * 30}
-          stroke="hsla(38,80%,55%,0.025)" strokeWidth="0.3" />
-      ))}
-      {Array.from({ length: 14 }).map((_, i) => (
-        <line key={`v${i}`} x1={i * 30} y1="0" x2={i * 30} y2="300"
-          stroke="hsla(38,80%,55%,0.025)" strokeWidth="0.3" />
-      ))}
+    <div className="relative w-full h-full max-w-[500px] max-h-[500px] flex items-center justify-center">
+      {/* Grid lines */}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <line key={`h${i}`} x1="5" y1={10 + i * 12} x2="95" y2={10 + i * 12}
+            stroke="hsla(38,80%,55%,0.03)" strokeWidth="0.15" />
+        ))}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <line key={`v${i}`} x1={10 + i * 12} y1="5" x2={10 + i * 12} y2="95"
+            stroke="hsla(38,80%,55%,0.03)" strokeWidth="0.15" />
+        ))}
+      </svg>
 
       {/* Connection lines */}
-      {cities.filter(c => !c.highlight).map((city, i) => (
-        <line key={`conn${i}`}
-          x1={katowice.x} y1={katowice.y}
-          x2={city.x} y2={city.y}
-          stroke="hsla(38,80%,55%,0.08)"
-          strokeWidth="0.3"
-          strokeDasharray="3 3"
-        />
-      ))}
-
-      {/* Countries */}
-      <path d={toPath(scandinavia)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(finland)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(uk)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(ireland)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(france)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(spain)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(portugal)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(germany)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(italy)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(balkans)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-      <path d={toPath(balticEast)} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.6" fill="none" />
-
-      {/* Poland highlighted */}
-      <path d={toPath(poland)} stroke="hsla(38,80%,55%,0.6)" strokeWidth="1" fill="hsla(38,80%,55%,0.08)" />
-
-      {/* Poland glow */}
-      <circle cx={katowice.x} cy={katowice.y} r="12" fill="hsla(38,80%,55%,0.05)">
-        <animate attributeName="r" values="10;18;10" dur="3s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite" />
-      </circle>
-
-      {/* City dots */}
-      {cities.map((city, i) => (
-        <g key={i}>
-          <circle cx={city.x} cy={city.y} r={city.highlight ? 2.5 : 1.2}
-            fill={city.highlight ? "hsla(38,80%,55%,0.85)" : "hsla(38,80%,55%,0.3)"} />
-          {city.highlight && city.label && (
-            <text x={city.x + 5} y={city.y + 3} fill="hsla(38,80%,55%,0.6)" fontSize="6" fontFamily="Inter, sans-serif" fontWeight="500">
-              {city.label}
-            </text>
-          )}
-        </g>
-      ))}
-
-      {/* Animated dots */}
-      {cities.filter(c => !c.highlight).map((city, i) => (
-        <circle key={`p${i}`} r="0.8" fill="hsla(38,80%,55%,0.5)">
-          <animateMotion
-            dur={`${3 + i * 0.4}s`}
-            repeatCount="indefinite"
-            path={`M${katowice.x},${katowice.y} L${city.x},${city.y}`}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+        {cities.map((city, i) => (
+          <line key={`conn${i}`}
+            x1={katowice.x} y1={katowice.y}
+            x2={city.x} y2={city.y}
+            stroke="hsla(38,80%,55%,0.1)"
+            strokeWidth="0.2"
+            strokeDasharray="1.5 1.5"
           />
+        ))}
+      </svg>
+
+      {/* Europe map image with gold tint */}
+      <img
+        src={europeMapImg}
+        alt="Europe map"
+        className="w-[90%] h-[90%] object-contain"
+        style={{
+          opacity: 0.2,
+          filter: 'invert(1) sepia(1) saturate(3) hue-rotate(10deg) brightness(0.85)',
+          mixBlendMode: 'screen',
+        }}
+      />
+
+      {/* Dots and animations overlay */}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+        {/* Poland glow */}
+        <circle cx={katowice.x} cy={katowice.y} r="4" fill="hsla(38,80%,55%,0.06)">
+          <animate attributeName="r" values="3;6;3" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite" />
         </circle>
-      ))}
-    </svg>
+
+        {/* Katowice dot */}
+        <circle cx={katowice.x} cy={katowice.y} r="1" fill="hsla(38,80%,55%,0.85)" />
+        <text x={katowice.x + 2} y={katowice.y + 0.8} fill="hsla(38,80%,55%,0.6)" fontSize="2.5" fontFamily="Inter, sans-serif" fontWeight="500">
+          Katowice
+        </text>
+
+        {/* City dots */}
+        {cities.map((city, i) => (
+          <circle key={i} cx={city.x} cy={city.y} r="0.5" fill="hsla(38,80%,55%,0.3)" />
+        ))}
+
+        {/* Animated pulse dots */}
+        {cities.map((city, i) => (
+          <circle key={`p${i}`} r="0.4" fill="hsla(38,80%,55%,0.5)">
+            <animateMotion
+              dur={`${3 + i * 0.4}s`}
+              repeatCount="indefinite"
+              path={`M${katowice.x},${katowice.y} L${city.x},${city.y}`}
+            />
+          </circle>
+        ))}
+      </svg>
+    </div>
   );
 };
 
