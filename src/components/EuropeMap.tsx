@@ -13,9 +13,25 @@ const EuropeMap: React.FC = () => {
     "M 247.3,241.0 L 244.4,243.4 L 243.5,245.8 L 242.5,243.4 L 239.6,243.4 L 238.7,249.4 L 236.7,247.0 L 233.9,247.0 L 233.9,249.4 L 235.8,251.8 L 237.7,251.8 L 239.6,248.2 L 241.5,250.6 L 244.4,250.6 L 246.3,248.2 L 247.3,245.8 Z",
   ];
 
+  // Poland center (approximate from path 0 - the mainland)
+  const polandCenter = { x: 355, y: 175 };
+
+  // Target cities across Europe
+  const connections = [
+    { x: 165, y: 240, label: "London" },      // UK
+    { x: 230, y: 290, label: "Paris" },        // France
+    { x: 290, y: 190, label: "Berlin" },       // Germany
+    { x: 370, y: 450, label: "Roma" },         // Italy
+    { x: 100, y: 370, label: "Madrid" },       // Spain
+    { x: 450, y: 130, label: "Helsinki" },     // Finland/Scandinavia
+    { x: 490, y: 300, label: "Bucureşti" },    // Romania area
+    { x: 130, y: 240, label: "Dublin" },       // Ireland
+    { x: 310, y: 110, label: "Oslo" },         // Norway
+  ];
+
   return (
-    <div className="relative w-full h-full max-w-[600px] max-h-[600px] flex items-center justify-center">
-      {/* Subtle grid */}
+    <div className="relative w-full h-full flex items-center justify-center">
+      {/* Grid */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         {Array.from({ length: 8 }).map((_, i) => (
           <line key={`h${i}`} x1="5" y1={10 + i * 11.5} x2="95" y2={10 + i * 11.5}
@@ -27,7 +43,7 @@ const EuropeMap: React.FC = () => {
         ))}
       </svg>
 
-      {/* Traced Europe contours */}
+      {/* Main SVG */}
       <svg
         className="relative z-10 w-full h-full"
         viewBox="30 20 520 470"
@@ -35,8 +51,58 @@ const EuropeMap: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         style={{ shapeRendering: "geometricPrecision" }}
       >
+        {/* Animated dashed connection lines from Poland */}
+        {connections.map((target, i) => (
+          <g key={`conn-${i}`}>
+            <line
+              x1={polandCenter.x} y1={polandCenter.y}
+              x2={target.x} y2={target.y}
+              stroke="hsla(38,70%,50%,0.12)"
+              strokeWidth="0.8"
+              strokeDasharray="4 4"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;-8"
+                dur={`${1.5 + i * 0.2}s`}
+                repeatCount="indefinite"
+              />
+            </line>
+
+            {/* Animated traveling dot */}
+            <circle r="2.5" fill="hsla(38,70%,55%,0.7)">
+              <animateMotion
+                dur={`${2.5 + i * 0.3}s`}
+                repeatCount="indefinite"
+                path={`M${polandCenter.x},${polandCenter.y} L${target.x},${target.y}`}
+              />
+              <animate attributeName="opacity" values="0;1;1;0" dur={`${2.5 + i * 0.3}s`} repeatCount="indefinite" />
+            </circle>
+          </g>
+        ))}
+
+        {/* Country contour paths */}
         {paths.map((d, i) => (
           <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="hsla(38,60%,45%,0.06)" />
+        ))}
+
+        {/* Poland glow pulse */}
+        <circle cx={polandCenter.x} cy={polandCenter.y} r="15" fill="hsla(38,70%,50%,0.06)">
+          <animate attributeName="r" values="12;22;12" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite" />
+        </circle>
+
+        {/* Poland dot */}
+        <circle cx={polandCenter.x} cy={polandCenter.y} r="4" fill="hsla(38,70%,55%,0.9)" />
+        <text x={polandCenter.x + 8} y={polandCenter.y + 4} fill="hsla(38,70%,55%,0.7)" fontSize="10" fontFamily="Inter, sans-serif" fontWeight="600">
+          Polska
+        </text>
+
+        {/* Target city dots */}
+        {connections.map((city, i) => (
+          <g key={`city-${i}`}>
+            <circle cx={city.x} cy={city.y} r="2" fill="hsla(38,70%,55%,0.45)" />
+          </g>
         ))}
       </svg>
     </div>

@@ -57,7 +57,7 @@ const About: React.FC = () => {
           {/* Right column - Europe Map */}
           <AnimatedSection direction="right" delay={0.3}>
             <div className="relative flex items-center justify-center">
-              <div className="aspect-square w-full max-w-[500px]">
+              <div className="w-full max-w-[600px] aspect-[4/3]">
                 <EuropeMap />
               </div>
             </div>
