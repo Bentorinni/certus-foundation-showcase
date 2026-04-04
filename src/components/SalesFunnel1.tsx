@@ -39,7 +39,7 @@ const SalesFunnel1: React.FC = () => {
         </AnimatedSection>
 
         {/* LAYOUT: 3 columns with numbered cards and arrows — GRID CARDS */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16 items-stretch">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.2}>
               <div className="relative">
