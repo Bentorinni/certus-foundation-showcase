@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           {/* Right - Globe */}
           <AnimatedSection delay={0.3}>
             <div className="flex items-center justify-center lg:justify-end">
-              <div className="w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] relative">
+              <div className="w-[500px] h-[500px] lg:w-[550px] lg:h-[550px] relative">
                 <div className="absolute inset-0 rounded-full bg-accent/5 blur-3xl" />
                 <SpinningGlobe />
               </div>
