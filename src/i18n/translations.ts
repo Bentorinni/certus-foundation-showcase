@@ -329,6 +329,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'Verkaufen oder vermieten',
     'footer.rights': 'Alle Rechte vorbehalten.',
     'footer.license': 'Maklerlizenz Nr. 11751 — Ministerium für Infrastruktur der Republik Polen',
+    'footer.privacy': 'Datenschutzrichtlinie',
   },
 
   it: {
