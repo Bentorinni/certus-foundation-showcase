@@ -42,7 +42,7 @@ const SalesFunnel4: React.FC = () => {
           {/* Connection line */}
           <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px bg-accent/20" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 items-stretch">
             {steps.map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.15}>
                 <div className="text-center relative">

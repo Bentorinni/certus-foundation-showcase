@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
 import { Shield, Award, Scale } from 'lucide-react';
-import aboutBg from '../assets/about-bg.jpg';
+import EuropeMap from './EuropeMap';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -54,22 +54,12 @@ const About: React.FC = () => {
             </AnimatedSection>
           </div>
 
-          {/* Right column - real estate photo */}
+          {/* Right column - Europe Map */}
           <AnimatedSection direction="right" delay={0.3}>
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
-                <img
-                  src={aboutBg}
-                  alt="Modern real estate interior"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  width={800}
-                  height={1000}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            <div className="relative flex items-center justify-center">
+              <div className="aspect-square w-full max-w-[500px]">
+                <EuropeMap />
               </div>
-              {/* Decorative border */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 rounded-2xl -z-10" />
             </div>
           </AnimatedSection>
         </div>

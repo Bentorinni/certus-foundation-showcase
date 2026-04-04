@@ -33,65 +33,76 @@ const Contact: React.FC = () => {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Form */}
+          {/* Left: Form + QR */}
           <AnimatedSection direction="left">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
+            <div className="flex flex-col h-full">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-1">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium font-body mb-2">{t('contact.name')}</label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium font-body mb-2">{t('contact.email')}</label>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label className="block text-sm font-medium font-body mb-2">{t('contact.name')}</label>
+                  <label className="block text-sm font-medium font-body mb-2">{t('contact.phone')}</label>
                   <input
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium font-body mb-2">{t('contact.email')}</label>
-                  <input
-                    type="email"
+                  <label className="block text-sm font-medium font-body mb-2">{t('contact.message')}</label>
+                  <textarea
                     required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                    rows={5}
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none"
                   />
                 </div>
+                <button
+                  type="submit"
+                  className="group w-full bg-gradient-gold text-accent-foreground py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.3)] hover:scale-[1.01] font-body"
+                >
+                  <Send className="w-4 h-4" />
+                  {t('contact.send')}
+                </button>
+              </form>
+
+              {/* QR Code */}
+              <div className="relative p-6 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group text-center mt-6">
+                <div className="inline-block p-3 bg-white rounded-xl shadow-md mb-3 group-hover:shadow-accent/20 transition-shadow">
+                  <img src={qrCode} alt="QR Code - Fundus Certus" className="w-28 h-28 object-contain" />
+                </div>
+                <p className="font-display font-bold text-base mb-1">{t('contact.qrTitle')}</p>
+                <p className="text-muted-foreground text-xs font-body">{t('contact.qrSubtitle')}</p>
               </div>
-              <div>
-                <label className="block text-sm font-medium font-body mb-2">{t('contact.phone')}</label>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium font-body mb-2">{t('contact.message')}</label>
-                <textarea
-                  required
-                  rows={5}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="group w-full bg-gradient-gold text-accent-foreground py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(38_100%_50%/0.3)] hover:scale-[1.01] font-body"
-              >
-                <Send className="w-4 h-4" />
-                {t('contact.send')}
-              </button>
-            </form>
+            </div>
           </AnimatedSection>
 
-          {/* Map & info */}
+          {/* Right: Info + Map */}
           <AnimatedSection direction="right">
-            <div className="space-y-6">
+            <div className="flex flex-col h-full">
               {/* Contact info */}
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary border border-border">
                   <MapPin className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
@@ -121,17 +132,8 @@ const Contact: React.FC = () => {
                 </a>
               </div>
 
-              {/* QR Code */}
-              <div className="relative p-6 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group text-center">
-                <div className="inline-block p-3 bg-white rounded-xl shadow-md mb-3 group-hover:shadow-accent/20 transition-shadow">
-                  <img src={qrCode} alt="QR Code - Fundus Certus" className="w-28 h-28 object-contain" />
-                </div>
-                <p className="font-display font-bold text-base mb-1">{t('contact.qrTitle')}</p>
-                <p className="text-muted-foreground text-xs font-body">{t('contact.qrSubtitle')}</p>
-              </div>
-
-              {/* Google Maps */}
-              <div className="rounded-xl overflow-hidden border border-border h-[280px]">
+              {/* Google Maps - fills remaining space */}
+              <div className="rounded-xl overflow-hidden border border-border flex-1 min-h-[300px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2551.5!2d19.0258!3d50.2471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce2336a1ccd1%3A0x123456789!2sul.+J.+Lig%C4%99zy+12%2C+40-551+Katowice!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
                   width="100%"
