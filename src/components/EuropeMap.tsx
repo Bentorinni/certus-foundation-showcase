@@ -30,13 +30,13 @@ const EuropeMap: React.FC = () => {
       {/* Traced Europe contours */}
       <svg
         className="relative z-10 w-full h-full"
-        viewBox="0 0 600 500"
+        viewBox="30 20 520 470"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ shapeRendering: "geometricPrecision" }}
       >
         {paths.map((d, i) => (
-          <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="hsla(38,60%,45%,0.06)" />
         ))}
       </svg>
     </div>
