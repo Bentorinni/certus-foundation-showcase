@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ArrowDown, CheckCircle2 } from 'lucide-react';
 
 const SalesFunnel1: React.FC = () => {
   const { t } = useLanguage();
@@ -38,25 +38,32 @@ const SalesFunnel1: React.FC = () => {
           <p className="text-white/50 font-body max-w-2xl mx-auto">{t('funnel1.subtitle')}</p>
         </AnimatedSection>
 
-        {/* LAYOUT: 3 columns with numbered cards and arrows — GRID CARDS */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16 items-stretch">
-          {steps.map((step, i) => (
-            <AnimatedSection key={i} delay={i * 0.2}>
-              <div className="relative h-full">
-                <div className="glass rounded-xl p-8 h-full">
-                  <div className="text-5xl font-display font-bold text-accent/20 mb-4">{step.num}</div>
-                  <h3 className="text-xl font-display font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-white/50 font-body text-sm leading-relaxed">{step.desc}</p>
-                  <CheckCircle2 className="w-5 h-5 text-accent mt-4" />
-                </div>
-                {i < 2 && (
-                  <div className="hidden md:flex absolute top-1/2 -right-4 z-10">
-                    <ArrowRight className="w-8 h-8 text-accent/30" />
+        {/* LAYOUT: Vertical funnel — narrowing width with connecting arrows */}
+        <div className="flex flex-col items-center gap-4 mb-16 max-w-4xl mx-auto">
+          {steps.map((step, i) => {
+            const widths = ['w-full', 'w-[85%]', 'w-[70%]'];
+            return (
+              <React.Fragment key={i}>
+                <AnimatedSection delay={i * 0.2} className={`${widths[i]}`}>
+                  <div className="glass rounded-xl p-8 flex items-start gap-6 transition-all duration-500 hover:border-accent/30">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-full border-2 border-accent/40 flex items-center justify-center">
+                      <span className="text-xl font-display font-bold text-accent">{step.num}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-display font-semibold text-white mb-2">{step.title}</h3>
+                      <p className="text-white/50 font-body text-sm leading-relaxed">{step.desc}</p>
+                    </div>
+                    <CheckCircle2 className="w-5 h-5 text-accent/40 flex-shrink-0 mt-1" />
                   </div>
+                </AnimatedSection>
+                {i < steps.length - 1 && (
+                  <AnimatedSection delay={i * 0.2 + 0.1}>
+                    <ArrowDown className="w-6 h-6 text-accent/30" />
+                  </AnimatedSection>
                 )}
-              </div>
-            </AnimatedSection>
-          ))}
+              </React.Fragment>
+            );
+          })}
         </div>
 
         <AnimatedSection delay={0.6} className="text-center">
