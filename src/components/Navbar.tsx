@@ -6,14 +6,12 @@ import logo from '../assets/logo.png';
 
 const Navbar: React.FC = () => {
   const { t, language, setLanguage } = useLanguage();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('#home');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
       const sections = ['#home', '#about', '#services', '#testimonials', '#contact'];
       let current = '#home';
       for (const id of sections) {
@@ -43,18 +41,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/50'
-          : 'bg-transparent'
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md shadow-lg border-b border-border/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-            <div className="h-16 w-16 rounded-full flex items-center justify-center p-1 logo-spin-3d">
+            <div className="h-16 w-16 rounded-full flex items-center justify-center p-1 logo-float-3d">
               <img
                 src={logo}
                 alt="Fundus Certus"
@@ -62,8 +54,8 @@ const Navbar: React.FC = () => {
               />
             </div>
             <span className="text-3xl font-display font-extrabold tracking-tight">
-              <span className={isScrolled ? 'text-foreground' : 'text-white'}>Fundus</span>
-              <span className="text-gradient-gold"> Certus</span>
+              <span className="text-primary-foreground">FUNDUS</span>
+              <span className="text-gradient-gold"> CERTUS</span>
             </span>
           </button>
 
@@ -76,9 +68,7 @@ const Navbar: React.FC = () => {
                 className={`relative text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
                   activeSection === link.href
                     ? 'text-accent'
-                    : isScrolled
-                    ? 'text-foreground/70 hover:text-accent'
-                    : 'text-white/80 hover:text-accent'
+                    : 'text-primary-foreground/70 hover:text-accent'
                 }`}
               >
                 {link.label}
@@ -92,9 +82,7 @@ const Navbar: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
-                  isScrolled ? 'text-foreground/70 hover:text-foreground' : 'text-white/80 hover:text-white'
-                }`}
+                className="flex items-center gap-1.5 text-sm font-medium transition-colors text-primary-foreground/70 hover:text-primary-foreground"
               >
                 <Globe className="w-4 h-4" />
                 <span className="uppercase">{language}</span>
@@ -121,7 +109,7 @@ const Navbar: React.FC = () => {
           {/* Mobile */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className={`lg:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}
+            className="lg:hidden p-2 text-primary-foreground"
           >
             {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

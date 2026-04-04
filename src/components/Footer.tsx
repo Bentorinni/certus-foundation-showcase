@@ -10,12 +10,12 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <span className="text-2xl font-display font-bold">
-              Fundus <span className="text-gradient-gold">Certus</span>
+              FUNDUS <span className="text-gradient-gold">CERTUS</span>
             </span>
           </div>
           <div className="text-center md:text-right">
             <p className="text-sm text-primary-foreground/60 font-body">
-              © {new Date().getFullYear()} Fundus Certus. {t('footer.rights')}
+              © {new Date().getFullYear()} FUNDUS CERTUS. {t('footer.rights')}
             </p>
             <p className="text-xs text-primary-foreground/40 font-body mt-1">
               {t('footer.license')}

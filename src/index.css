@@ -126,13 +126,17 @@
 }
 
 /* 3D spinning logo */
-@keyframes spin3d {
-  0% { transform: perspective(600px) rotateY(0deg); }
-  100% { transform: perspective(600px) rotateY(360deg); }
+/* 3D floating logo */
+@keyframes float3d {
+  0% { transform: perspective(600px) rotateY(-8deg) rotateX(4deg); }
+  25% { transform: perspective(600px) rotateY(8deg) rotateX(-2deg); }
+  50% { transform: perspective(600px) rotateY(-5deg) rotateX(-4deg); }
+  75% { transform: perspective(600px) rotateY(10deg) rotateX(2deg); }
+  100% { transform: perspective(600px) rotateY(-8deg) rotateX(4deg); }
 }
 
-.logo-spin-3d {
-  animation: spin3d 12s linear infinite;
+.logo-float-3d {
+  animation: float3d 8s ease-in-out infinite;
   transform-style: preserve-3d;
 }
 
