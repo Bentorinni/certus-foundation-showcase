@@ -129,6 +129,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     'footer.rights': 'Wszelkie prawa zastrzeżone.',
     'footer.license': 'Licencja pośrednika nr 11751 — Ministerstwo Infrastruktury RP',
+    'footer.privacy': 'Polityka prywatności',
   },
 
   en: {
