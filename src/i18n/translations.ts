@@ -229,6 +229,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'I want to sell or rent',
     'footer.rights': 'All rights reserved.',
     'footer.license': 'Broker license no. 11751 — Ministry of Infrastructure of Poland',
+    'footer.privacy': 'Privacy Policy',
   },
 
   de: {
