@@ -31,7 +31,7 @@ const SalesFunnel3: React.FC = () => {
         </AnimatedSection>
 
         {/* LAYOUT: 2x2 grid with large numbered badges — distinct from other funnels */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto items-stretch">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
               <div className="group relative bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_40px_hsl(38_100%_50%/0.08)]">

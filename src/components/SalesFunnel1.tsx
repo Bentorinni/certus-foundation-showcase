@@ -42,7 +42,7 @@ const SalesFunnel1: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16 items-stretch">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.2}>
-              <div className="relative">
+              <div className="relative h-full">
                 <div className="glass rounded-xl p-8 h-full">
                   <div className="text-5xl font-display font-bold text-accent/20 mb-4">{step.num}</div>
                   <h3 className="text-xl font-display font-semibold text-white mb-3">{step.title}</h3>
