@@ -74,12 +74,12 @@ const Testimonials: React.FC = () => {
                     <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <div className="border-t border-border pt-4">
+                <div className="border-t border-white/10 pt-4">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">{item.country}</span>
                     <div>
-                      <p className="font-semibold text-sm font-body">{item.name}</p>
-                      <p className="text-xs text-muted-foreground font-body">{item.company}</p>
+                      <p className="font-semibold text-sm font-body text-white">{item.name}</p>
+                      <p className="text-xs text-white/40 font-body">{item.company}</p>
                     </div>
                   </div>
                 </div>
