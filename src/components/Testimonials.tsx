@@ -46,7 +46,7 @@ const Testimonials: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-background">
+    <section id="testimonials" className="py-24 lg:py-32 bg-gradient-dark relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -56,7 +56,7 @@ const Testimonials: React.FC = () => {
             </span>
             <div className="h-px w-8 bg-gradient-gold" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
             {t('testimonials.title')}
           </h2>
         </AnimatedSection>
@@ -64,9 +64,9 @@ const Testimonials: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((item, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <div className="relative bg-card border border-border rounded-xl p-8 h-full group hover:border-accent/30 transition-all duration-500">
-                <Quote className="w-8 h-8 text-accent/20 mb-4" />
-                <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">
+              <div className="relative glass rounded-xl p-8 h-full group hover:border-accent/30 transition-all duration-500">
+                <Quote className="w-8 h-8 text-accent/30 mb-4" />
+                <p className="text-white/50 font-body text-sm leading-relaxed mb-6">
                   {item.text[language]}
                 </p>
                 <div className="flex items-center gap-1 mb-4">
@@ -74,12 +74,12 @@ const Testimonials: React.FC = () => {
                     <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <div className="border-t border-border pt-4">
+                <div className="border-t border-white/10 pt-4">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">{item.country}</span>
                     <div>
-                      <p className="font-semibold text-sm font-body">{item.name}</p>
-                      <p className="text-xs text-muted-foreground font-body">{item.company}</p>
+                      <p className="font-semibold text-sm font-body text-white">{item.name}</p>
+                      <p className="text-xs text-white/40 font-body">{item.company}</p>
                     </div>
                   </div>
                 </div>
