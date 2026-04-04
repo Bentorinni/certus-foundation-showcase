@@ -14,7 +14,7 @@ const EuropeMap: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full h-full max-w-[500px] max-h-[500px] flex items-center justify-center">
+    <div className="relative w-full h-full max-w-[600px] max-h-[600px] flex items-center justify-center">
       {/* Subtle grid */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         {Array.from({ length: 8 }).map((_, i) => (
