@@ -55,7 +55,7 @@ const SalesFunnel4: React.FC = () => {
         <AnimatedSection delay={0.7} className="text-center">
           <button
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(145_100%_45%/0.3)] hover:scale-[1.02] font-body"
+            className="group bg-gradient-gold text-accent-foreground px-10 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_40px_hsl(142_100%_50%/0.3)] hover:scale-[1.02] font-body"
           >
             {t('funnel4.cta')}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
