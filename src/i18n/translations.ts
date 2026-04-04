@@ -429,6 +429,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'funnel4.cta': 'Voglio vendere o affittare',
     'footer.rights': 'Tutti i diritti riservati.',
     'footer.license': 'Licenza broker n. 11751 — Ministero delle Infrastrutture della Polonia',
+    'footer.privacy': 'Informativa sulla privacy',
   },
 
   ru: {
