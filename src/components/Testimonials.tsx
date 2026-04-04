@@ -56,7 +56,7 @@ const Testimonials: React.FC = () => {
             </span>
             <div className="h-px w-8 bg-gradient-gold" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
             {t('testimonials.title')}
           </h2>
         </AnimatedSection>
