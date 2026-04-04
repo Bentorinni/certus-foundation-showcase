@@ -64,9 +64,9 @@ const Testimonials: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((item, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <div className="relative bg-card border border-border rounded-xl p-8 h-full group hover:border-accent/30 transition-all duration-500">
-                <Quote className="w-8 h-8 text-accent/20 mb-4" />
-                <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6">
+              <div className="relative glass rounded-xl p-8 h-full group hover:border-accent/30 transition-all duration-500">
+                <Quote className="w-8 h-8 text-accent/30 mb-4" />
+                <p className="text-white/50 font-body text-sm leading-relaxed mb-6">
                   {item.text[language]}
                 </p>
                 <div className="flex items-center gap-1 mb-4">
