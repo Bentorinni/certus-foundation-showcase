@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">{t('contact.subtitle')}</p>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Left: Form + QR */}
           <AnimatedSection direction="left">
             <div className="flex flex-col h-full">

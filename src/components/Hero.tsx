@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-32 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div>
@@ -32,13 +32,13 @@ const Hero: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.1] mb-8 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.1] mb-6 sm:mb-8 drop-shadow-lg">
                 {t('hero.title')}
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
-              <p className="text-lg sm:text-xl text-primary-foreground/80 leading-relaxed mb-12 max-w-xl font-body drop-shadow-md">
+              <p className="text-base sm:text-xl text-primary-foreground/80 leading-relaxed mb-8 sm:mb-12 max-w-xl font-body drop-shadow-md">
                 {t('hero.subtitle')}
               </p>
             </AnimatedSection>
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           {/* Right - Globe */}
           <AnimatedSection delay={0.3}>
             <div className="flex items-center justify-center lg:justify-end">
-              <div className="w-[500px] h-[500px] lg:w-[550px] lg:h-[550px] relative">
+              <div className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] relative">
                 <div className="absolute inset-0 rounded-full bg-accent/5 blur-3xl" />
                 <SpinningGlobe />
               </div>

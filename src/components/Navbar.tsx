@@ -43,17 +43,17 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md shadow-lg border-b border-border/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-14 sm:h-20">
           {/* Logo */}
-          <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-            <div className="h-16 w-16 rounded-full flex items-center justify-center p-1 logo-float-3d">
+          <button onClick={() => scrollTo('#home')} className="flex items-center gap-2 sm:gap-3 group">
+            <div className="h-9 w-9 sm:h-16 sm:w-16 rounded-full flex items-center justify-center p-0.5 sm:p-1 logo-float-3d">
               <img
                 src={logo}
                 alt="Fundus Certus"
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="text-3xl font-display font-extrabold tracking-tight">
+            <span className="text-lg sm:text-3xl font-display font-extrabold tracking-tight">
               <span className="text-primary-foreground">FUNDUS</span>
               <span className="text-gradient-gold"> CERTUS</span>
             </span>
