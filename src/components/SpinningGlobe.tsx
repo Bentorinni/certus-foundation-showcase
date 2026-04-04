@@ -65,8 +65,8 @@ const SpinningGlobe: React.FC = () => {
         const rx = Math.cos(latR) * r;
         ctx.beginPath();
         ctx.ellipse(cx, y, rx, Math.max(rx * 0.04, 0.5), 0, 0, Math.PI * 2);
-        ctx.strokeStyle = `hsla(38, 70%, 50%, ${lat === 0 ? 0.12 : 0.06})`;
-        ctx.lineWidth = lat === 0 ? 0.4 : 0.3;
+        ctx.strokeStyle = `hsla(38, 70%, 50%, ${lat === 0 ? 0.18 : 0.1})`;
+        ctx.lineWidth = lat === 0 ? 0.8 : 0.5;
         ctx.stroke();
       }
 
