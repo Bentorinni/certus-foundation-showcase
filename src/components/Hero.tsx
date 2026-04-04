@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
-              <p className="text-lg sm:text-xl text-primary-foreground/80 leading-relaxed mb-12 max-w-xl font-body drop-shadow-md">
+              <p className="text-base sm:text-xl text-primary-foreground/80 leading-relaxed mb-8 sm:mb-12 max-w-xl font-body drop-shadow-md">
                 {t('hero.subtitle')}
               </p>
             </AnimatedSection>
