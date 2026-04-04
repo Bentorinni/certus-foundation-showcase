@@ -14,7 +14,7 @@ const EuropeMap: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full h-full max-w-[500px] max-h-[500px] flex items-center justify-center">
+    <div className="relative w-full h-full max-w-[600px] max-h-[600px] flex items-center justify-center">
       {/* Subtle grid */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         {Array.from({ length: 8 }).map((_, i) => (
@@ -29,14 +29,14 @@ const EuropeMap: React.FC = () => {
 
       {/* Traced Europe contours */}
       <svg
-        className="relative z-10 w-[92%] h-[92%]"
+        className="relative z-10 w-full h-full"
         viewBox="0 0 600 500"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ shapeRendering: "geometricPrecision" }}
       >
         {paths.map((d, i) => (
-          <path key={i} d={d} stroke="hsla(38,80%,55%,0.22)" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
         ))}
       </svg>
     </div>
