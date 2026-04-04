@@ -63,11 +63,11 @@ const EuropeMap: React.FC = () => {
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         {Array.from({ length: 8 }).map((_, i) => (
           <line key={`h${i}`} x1="5" y1={10 + i * 11.5} x2="95" y2={10 + i * 11.5}
-            stroke="hsla(38,80%,55%,0.025)" strokeWidth="0.15" />
+            stroke="hsla(145,100%,45%,0.025)" strokeWidth="0.15" />
         ))}
         {Array.from({ length: 8 }).map((_, i) => (
           <line key={`v${i}`} x1={10 + i * 11.5} y1="5" x2={10 + i * 11.5} y2="95"
-            stroke="hsla(38,80%,55%,0.025)" strokeWidth="0.15" />
+            stroke="hsla(145,100%,45%,0.025)" strokeWidth="0.15" />
         ))}
       </svg>
 
@@ -84,7 +84,7 @@ const EuropeMap: React.FC = () => {
             <line
               x1={cities[a].x} y1={cities[a].y}
               x2={cities[b].x} y2={cities[b].y}
-              stroke="hsla(38,70%,50%,0.12)"
+              stroke="hsla(145,100%,45%,0.12)"
               strokeWidth="0.6"
               strokeDasharray="4 3"
             >
@@ -95,7 +95,7 @@ const EuropeMap: React.FC = () => {
                 repeatCount="indefinite"
               />
             </line>
-            <circle r="1.8" fill="hsla(38,70%,55%,0.6)">
+            <circle r="1.8" fill="hsla(145,100%,50%,0.6)">
               <animateMotion
                 dur={`${2.5 + (i % 4) * 0.5}s`}
                 repeatCount="indefinite"
@@ -108,12 +108,12 @@ const EuropeMap: React.FC = () => {
 
         {/* Country contours */}
         {paths.map((d, i) => (
-          <path key={i} d={d} stroke="hsla(38,60%,45%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="hsla(38,60%,45%,0.06)" />
+          <path key={i} d={d} stroke="hsla(145,100%,40%,0.55)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="hsla(145,100%,40%,0.06)" />
         ))}
 
         {/* City dots */}
         {cities.map((city, i) => (
-          <circle key={`dot-${i}`} cx={city.x} cy={city.y} r="2.5" fill="hsla(38,70%,55%,0.5)" />
+          <circle key={`dot-${i}`} cx={city.x} cy={city.y} r="2.5" fill="hsla(145,100%,50%,0.5)" />
         ))}
       </svg>
     </div>
