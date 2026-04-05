@@ -46,7 +46,7 @@ const SalesFunnel3: React.FC = () => {
         </AnimatedSection>
 
         <div className="relative max-w-5xl mx-auto mb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 lg:gap-8">
             {steps.map((step, i) => (
               <AnimatedSection
                 key={i}
