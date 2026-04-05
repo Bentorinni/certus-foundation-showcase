@@ -18,9 +18,10 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* Globe behind text on mobile, side-by-side on desktop */}
-      <div className="absolute inset-0 flex items-center justify-center lg:hidden opacity-20 pointer-events-none">
-        <div className="w-[350px] h-[350px] relative">
+      {/* Globe behind text on mobile - visible and atmospheric */}
+      <div className="absolute inset-0 flex items-center justify-center lg:hidden pointer-events-none" style={{ top: '-5%' }}>
+        <div className="w-[420px] h-[420px] relative opacity-40">
+          <div className="absolute inset-0 rounded-full bg-accent/10 blur-3xl" />
           <SpinningGlobe />
         </div>
       </div>

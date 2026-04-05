@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
-import { Shield, Award, Scale, MapPin } from 'lucide-react';
+import { Shield, Award, Scale } from 'lucide-react';
 import EuropeMap from './EuropeMap';
 
 const About: React.FC = () => {
