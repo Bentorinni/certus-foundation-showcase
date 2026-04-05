@@ -14,6 +14,19 @@ const Services: React.FC = () => {
     { icon: Film, title: t('services.film.title'), desc: t('services.film.desc') },
   ];
 
+  const renderCard = (service: typeof services[0], i: number) => (
+    <AnimatedSection key={i} delay={i * 0.1}>
+      <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 md:hover:border-accent/30 md:hover:shadow-[0_0_40px_hsl(142_100%_50%/0.08)]">
+        <div className="w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+          <service.icon className="w-6 h-6 text-accent-foreground" />
+        </div>
+        <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
+        <p className="text-muted-foreground font-body text-sm leading-relaxed">{service.desc}</p>
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      </div>
+    </AnimatedSection>
+  );
+
   return (
     <section id="services" className="py-24 lg:py-32 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,18 +44,10 @@ const Services: React.FC = () => {
         </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 md:hover:border-accent/30 md:hover:shadow-[0_0_40px_hsl(142_100%_50%/0.08)]">
-                <div className="w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
-                  <service.icon className="w-6 h-6 text-accent-foreground" />
-                </div>
-                <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{service.desc}</p>
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              </div>
-            </AnimatedSection>
-          ))}
+          {services.slice(0, 3).map((s, i) => renderCard(s, i))}
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6 mt-6 lg:max-w-[calc(66.666%+0.75rem)] mx-auto">
+          {services.slice(3).map((s, i) => renderCard(s, i + 3))}
         </div>
       </div>
     </section>
