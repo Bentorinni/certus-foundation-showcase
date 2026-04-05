@@ -43,10 +43,10 @@ const Services: React.FC = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.slice(0, 3).map((s, i) => renderCard(s, i))}
         </div>
-        <div className="grid sm:grid-cols-2 gap-6 mt-6 lg:max-w-[calc(66.666%+0.75rem)] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 sm:max-w-[calc(66.666%+0.75rem)] lg:max-w-[calc(66.666%+0.75rem)] mx-auto">
           {services.slice(3).map((s, i) => renderCard(s, i + 3))}
         </div>
       </div>

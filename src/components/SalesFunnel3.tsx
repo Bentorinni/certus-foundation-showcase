@@ -69,7 +69,7 @@ const SalesFunnel3: React.FC = () => {
             {/* Central hub */}
             <AnimatedSection
               delay={0.3}
-              className="lg:col-start-2 lg:row-start-1 lg:row-span-2 flex items-center justify-center sm:col-span-2 lg:col-span-1 order-first lg:order-none"
+              className="lg:col-start-2 lg:row-start-1 lg:row-span-2 flex items-center justify-center order-first lg:order-none"
             >
               <div className="relative w-full h-full min-h-[220px] lg:min-h-0 flex items-center justify-center">
                 {/* Glow rings */}
