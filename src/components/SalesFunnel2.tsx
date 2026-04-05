@@ -42,7 +42,7 @@ const SalesFunnel2: React.FC = () => {
             >
               <div className={`flex items-start gap-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <div className="bg-card border border-border rounded-xl p-5 sm:p-6 ml-14 sm:ml-16 md:ml-0 transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.06)]">
+                  <div className="bg-card border border-border rounded-xl p-5 sm:p-6 ml-14 sm:ml-16 md:ml-0 transition-all duration-500 <div className="bg-card border border-border rounded-xl p-5 sm:p-6 ml-14 sm:ml-16 md:ml-0 transition-all duration-500 md:hover:border-accent/30 md:hover:shadow-[0_0_30px_hsl(142_100%_50%/0.06)]">">
                     <h3 className="text-lg font-display font-semibold mb-2">{step.title}</h3>
                     <p className="text-muted-foreground font-body text-sm leading-relaxed">{step.desc}</p>
                   </div>
