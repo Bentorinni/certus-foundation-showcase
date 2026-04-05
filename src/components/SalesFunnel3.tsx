@@ -79,30 +79,11 @@ const SalesFunnel3: React.FC = () => {
 
                 {/* Arrows from center to cards */}
                 <svg className="absolute inset-0 w-full h-full hidden lg:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <defs>
-                    <marker id="arrowTL" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                    <marker id="arrowTR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                    <marker id="arrowBL" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                    <marker id="arrowBR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                  </defs>
-                  {/* Center to top-left card center */}
-                  <line x1="50" y1="50" x2="0" y2="25" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowTL)" />
-                  {/* Center to top-right card center */}
-                  <line x1="50" y1="50" x2="100" y2="25" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowTR)" />
-                  {/* Center to bottom-left card center */}
-                  <line x1="50" y1="50" x2="0" y2="75" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowBL)" />
-                  {/* Center to bottom-right card center */}
-                  <line x1="50" y1="50" x2="100" y2="75" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowBR)" />
-                  {/* Center dot */}
-                  <circle cx="50" cy="50" r="1.5" fill="hsl(142 100% 50% / 0.6)" />
+                  <line x1="50" y1="50" x2="0" y2="25" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <line x1="50" y1="50" x2="100" y2="25" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <line x1="50" y1="50" x2="0" y2="75" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <line x1="50" y1="50" x2="100" y2="75" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <circle cx="50" cy="50" r="1.5" fill="hsl(142 100% 50% / 0.5)" />
                 </svg>
 
                 {/* Center icon */}
