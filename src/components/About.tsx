@@ -40,7 +40,7 @@ const About: React.FC = () => {
 
           {/* Map on mobile - large and prominent */}
           <AnimatedSection delay={0.3}>
-            <div className="relative my-8 -mx-4 overflow-hidden">
+            <div className="relative my-8 overflow-hidden">
               <div className="w-full aspect-[4/3]">
                 <EuropeMap />
               </div>
