@@ -30,8 +30,21 @@ const Services: React.FC = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 [&>*:nth-child(4)]:lg:col-start-1 [&>*:nth-child(5)]:lg:col-start-2 last-row-center">
-          <style>{`.last-row-center > :nth-child(4) { grid-column-start: 1; } .last-row-center > :nth-child(5) { grid-column-start: 2; } @media (min-width: 1024px) { .last-row-center { grid-template-columns: repeat(3, 1fr); } .last-row-center > :nth-child(4) { grid-column-start: auto; margin-left: auto; } .last-row-center > :nth-child(5) { grid-column-start: auto; margin-right: auto; } }`}</style>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.slice(0, 3).map((service, i) => (
+            <AnimatedSection key={i} delay={i * 0.1}>
+              <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 md:hover:border-accent/30 md:hover:shadow-[0_0_40px_hsl(142_100%_50%/0.08)]">
+                <div className="w-12 h-12 rounded-lg bg-gradient-gold flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                  <service.icon className="w-6 h-6 text-accent-foreground" />
+                </div>
+                <h3 className="text-xl font-display font-semibold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground font-body text-sm leading-relaxed">{service.desc}</p>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6 mt-6 max-w-[calc(66.666%+0.75rem)] mx-auto lg:max-w-[calc(66.666%+0.75rem)]">
           {services.map((service, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
               <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 md:hover:border-accent/30 md:hover:shadow-[0_0_40px_hsl(142_100%_50%/0.08)]">
