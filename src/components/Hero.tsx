@@ -18,12 +18,19 @@ const Hero: React.FC = () => {
         }}
       />
 
+      {/* Globe behind text on mobile, side-by-side on desktop */}
+      <div className="absolute inset-0 flex items-center justify-center lg:hidden opacity-20 pointer-events-none">
+        <div className="w-[350px] h-[350px] relative">
+          <SpinningGlobe />
+        </div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-32 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
-          <div>
+          <div className="text-center lg:text-left">
             <AnimatedSection delay={0.1}>
-              <div className="flex items-center gap-2 mb-8">
+              <div className="flex items-center gap-2 mb-8 justify-center lg:justify-start">
                 <div className="h-px w-12 bg-gradient-gold" />
                 <span className="text-accent text-sm font-semibold tracking-[0.2em] uppercase font-body">
                   Fundus Certus
@@ -38,13 +45,13 @@ const Hero: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.4}>
-              <p className="text-base sm:text-xl text-primary-foreground/80 leading-relaxed mb-8 sm:mb-12 max-w-xl font-body drop-shadow-md">
+              <p className="text-base sm:text-xl text-primary-foreground/80 leading-relaxed mb-8 sm:mb-12 max-w-xl mx-auto lg:mx-0 font-body drop-shadow-md">
                 {t('hero.subtitle')}
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.6}>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="group bg-gradient-gold text-accent-foreground px-8 py-4 rounded-lg font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.3)] hover:scale-[1.02] font-body"
@@ -63,10 +70,10 @@ const Hero: React.FC = () => {
             </AnimatedSection>
           </div>
 
-          {/* Right - Globe */}
-          <AnimatedSection delay={0.3}>
+          {/* Right - Globe (desktop only) */}
+          <AnimatedSection delay={0.3} className="hidden lg:block">
             <div className="flex items-center justify-center lg:justify-end">
-              <div className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px] relative">
+              <div className="w-[550px] h-[550px] relative">
                 <div className="absolute inset-0 rounded-full bg-accent/5 blur-3xl" />
                 <SpinningGlobe />
               </div>
@@ -74,9 +81,6 @@ const Hero: React.FC = () => {
           </AnimatedSection>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
