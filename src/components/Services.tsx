@@ -30,7 +30,8 @@ const Services: React.FC = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 [&>*:nth-child(4)]:lg:col-start-1 [&>*:nth-child(5)]:lg:col-start-2 last-row-center">
+          <style>{`.last-row-center > :nth-child(4) { grid-column-start: 1; } .last-row-center > :nth-child(5) { grid-column-start: 2; } @media (min-width: 1024px) { .last-row-center { grid-template-columns: repeat(3, 1fr); } .last-row-center > :nth-child(4) { grid-column-start: auto; margin-left: auto; } .last-row-center > :nth-child(5) { grid-column-start: auto; margin-right: auto; } }`}</style>
           {services.map((service, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
               <div className="group relative bg-card border border-border rounded-xl p-8 h-full transition-all duration-500 md:hover:border-accent/30 md:hover:shadow-[0_0_40px_hsl(142_100%_50%/0.08)]">
