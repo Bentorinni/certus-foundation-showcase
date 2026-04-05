@@ -43,7 +43,7 @@ const SalesFunnel3: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {steps.map((step, i) => (
             <AnimatedSection key={i} delay={i * 0.12}>
-              <div className="group relative bg-card border border-border rounded-xl overflow-hidden h-full transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.08)]">
+              <div className="group relative bg-card border border-border rounded-xl overflow-hidden h-full transition-all duration-500 md:hover:border-accent/40 md:hover:shadow-[0_0_30px_hsl(142_100%_50%/0.08)]">
                 {/* Top neon accent bar */}
                 <div className="h-1 w-full bg-gradient-gold opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
 

@@ -51,7 +51,7 @@ const SalesFunnel1: React.FC = () => {
           <div className="space-y-5">
             {steps.map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.2} direction="right">
-                <div className="group relative flex items-center gap-5 glass rounded-xl p-6 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.1)]">
+                <div className="group relative flex items-center gap-5 glass rounded-xl p-6 transition-all duration-500 md:hover:border-accent/40 md:hover:shadow-[0_0_30px_hsl(142_100%_50%/0.1)]">
                   {/* Left neon bar */}
                   <div className="absolute left-0 top-3 bottom-3 w-1 rounded-full bg-accent/60 group-hover:bg-accent group-hover:shadow-[0_0_12px_hsl(142_100%_50%/0.6)] transition-all duration-500" />
 

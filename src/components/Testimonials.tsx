@@ -1,43 +1,40 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, Building2 } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Marcus Weber',
-    company: 'Weber Immobilien GmbH',
-    country: '🇩🇪',
+    name: 'A-STAVMAT POLSKA Sp. z o.o.',
+    isCompany: true,
     text: {
-      pl: 'Fundus Certus pomógł nam znaleźć idealną nieruchomość komercyjną w Warszawie. Profesjonalizm i znajomość rynku na najwyższym poziomie.',
-      en: 'Fundus Certus helped us find the perfect commercial property in Warsaw. Professionalism and market knowledge at the highest level.',
-      de: 'Fundus Certus hat uns geholfen, die perfekte Gewerbeimmobilie in Warschau zu finden. Professionalität und Marktkenntnisse auf höchstem Niveau.',
-      it: 'Fundus Certus ci ha aiutato a trovare la proprietà commerciale perfetta a Varsavia. Professionalità e conoscenza del mercato ai massimi livelli.',
-      ru: 'Fundus Certus помогли нам найти идеальную коммерческую недвижимость в Варшаве. Профессионализм и знание рынка на высшем уровне.',
+      pl: 'Bardzo sympatyczna obsługa. Rzetelne informacje i bardzo korzystne ceny za usługi. Zachęcam każdego do skorzystania z ofert. W szybkim czasie można uzyskać wiele ciekawych ofert, a także skorzystać z profesjonalnego doradztwa. POLECAM!!',
+      en: 'Very friendly service. Reliable information and very competitive prices for services. I encourage everyone to take advantage of the offers. In a short time you can get many interesting offers, as well as professional advice. HIGHLY RECOMMEND!!',
+      de: 'Sehr freundlicher Service. Zuverlässige Informationen und sehr wettbewerbsfähige Preise. Ich empfehle jedem, die Angebote zu nutzen. SEHR EMPFEHLENSWERT!!',
+      it: 'Servizio molto cordiale. Informazioni affidabili e prezzi molto competitivi. Consiglio a tutti di approfittare delle offerte. CONSIGLIATISSIMO!!',
+      ru: 'Очень дружелюбное обслуживание. Надёжная информация и очень конкурентоспособные цены. Рекомендую всем воспользоваться предложениями. НАСТОЯТЕЛЬНО РЕКОМЕНДУЮ!!',
     },
   },
   {
-    name: 'Giovanni Rossi',
-    company: 'Rossi Investments S.r.l.',
-    country: '🇮🇹',
+    name: 'Hanna Paulose',
+    isCompany: false,
     text: {
-      pl: 'Dzięki współpracy z Fundus Certus udało nam się z powodzeniem wejść na polski rynek. Kompleksowa obsługa i pełne wsparcie prawne.',
-      en: 'Thanks to cooperation with Fundus Certus, we successfully entered the Polish market. Comprehensive service and full legal support.',
-      de: 'Dank der Zusammenarbeit mit Fundus Certus konnten wir erfolgreich in den polnischen Markt eintreten. Umfassender Service und volle rechtliche Unterstützung.',
-      it: 'Grazie alla collaborazione con Fundus Certus, siamo entrati con successo nel mercato polacco. Servizio completo e pieno supporto legale.',
-      ru: 'Благодаря сотрудничеству с Fundus Certus мы успешно вышли на польский рынок. Комплексное обслуживание и полная юридическая поддержка.',
+      pl: 'Mieliśmy szczęście wynająć mieszkanie od Fundus Certus na nasz pobyt w Katowicach. Bardzo zadbane i dobrze wyposażone mieszkanie w normalnej cenie. Doceniamy uczciwość Jarosława. Najlepsza obsługa, jakiej mogliśmy oczekiwać — dostępny nawet w nocy, bardzo profesjonalny. Na pewno wrócimy!',
+      en: 'We were lucky to rent apartment from Fundus Certus for our stay in Katowice. A very well maintained and well furnished apartment at the normal price. We appreciate the integrity of Jaroslaw. We had the best service we could have hoped for. Jaroslaw was available to answer our questions even at night, and was very professional. We will definitely be back!',
+      de: 'Wir hatten das Glück, eine Wohnung von Fundus Certus für unseren Aufenthalt in Kattowitz zu mieten. Eine sehr gepflegte und gut eingerichtete Wohnung zum normalen Preis. Wir schätzen die Integrität von Jaroslaw. Wir werden definitiv wiederkommen!',
+      it: 'Siamo stati fortunati ad affittare un appartamento da Fundus Certus per il nostro soggiorno a Katowice. Un appartamento molto ben mantenuto e arredato a prezzo normale. Apprezziamo l\'integrità di Jaroslaw. Torneremo sicuramente!',
+      ru: 'Нам повезло арендовать квартиру у Fundus Certus для проживания в Катовицах. Очень ухоженная и хорошо обставленная квартира по нормальной цене. Мы ценим честность Ярослава. Мы обязательно вернёмся!',
     },
   },
   {
-    name: 'Алексей Петров',
-    company: 'East-West Trading LLC',
-    country: '🇷🇺',
+    name: 'Marek Kun',
+    isCompany: false,
     text: {
-      pl: 'Fundus Certus to wiarygodny partner w międzynarodowym biznesie. Pomogali nam w każdym etapie inwestycji — od analizy do finalizacji.',
-      en: 'Fundus Certus is a reliable partner in international business. They helped us at every stage of the investment — from analysis to finalization.',
-      de: 'Fundus Certus ist ein zuverlässiger Partner im internationalen Geschäft. Sie haben uns in jeder Phase der Investition unterstützt.',
-      it: 'Fundus Certus è un partner affidabile nel business internazionale. Ci hanno aiutato in ogni fase dell\'investimento.',
-      ru: 'Fundus Certus — надёжный партнёр в международном бизнесе. Помогали нам на каждом этапе инвестиции — от анализа до финализации.',
+      pl: 'Bardzo szybka odpowiedź, profesjonalna obsługa i pomoc w wynajmie nieruchomości, gorąco polecam.',
+      en: 'Very fast response, professional service and help with property rental, highly recommend.',
+      de: 'Sehr schnelle Antwort, professioneller Service und Hilfe bei der Immobilienvermietung, sehr empfehlenswert.',
+      it: 'Risposta molto rapida, servizio professionale e aiuto con l\'affitto di immobili, consiglio vivamente.',
+      ru: 'Очень быстрый ответ, профессиональное обслуживание и помощь в аренде недвижимости, горячо рекомендую.',
     },
   },
 ];
@@ -64,7 +61,7 @@ const Testimonials: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((item, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
-              <div className="relative glass rounded-xl p-8 h-full group hover:border-accent/30 transition-all duration-500">
+              <div className="relative glass rounded-xl p-8 h-full group transition-all duration-500 md:hover:border-accent/30">
                 <Quote className="w-8 h-8 text-accent/30 mb-4" />
                 <p className="text-white/50 font-body text-sm leading-relaxed mb-6">
                   {item.text[language]}
@@ -75,11 +72,26 @@ const Testimonials: React.FC = () => {
                   ))}
                 </div>
                 <div className="border-t border-white/10 pt-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">{item.country}</span>
+                  <div className="flex items-center gap-3">
+                    {item.isCompany ? (
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <Building2 className="w-5 h-5 text-accent" />
+                      </div>
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white/60 font-semibold text-sm">
+                          {item.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                        </span>
+                      </div>
+                    )}
                     <div>
                       <p className="font-semibold text-sm font-body text-white">{item.name}</p>
-                      <p className="text-xs text-white/40 font-body">{item.company}</p>
+                      <p className="text-xs text-white/40 font-body">
+                        {item.isCompany
+                          ? (language === 'pl' ? 'Firma' : language === 'de' ? 'Unternehmen' : language === 'it' ? 'Azienda' : language === 'ru' ? 'Компания' : 'Company')
+                          : (language === 'pl' ? 'Klient prywatny' : language === 'de' ? 'Privatkunde' : language === 'it' ? 'Cliente privato' : language === 'ru' ? 'Частный клиент' : 'Private client')
+                        }
+                      </p>
                     </div>
                   </div>
                 </div>
