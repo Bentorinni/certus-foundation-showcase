@@ -38,16 +38,10 @@ const About: React.FC = () => {
             </div>
           </AnimatedSection>
 
-          {/* Map floating between text blocks on mobile */}
+          {/* Map on mobile - large and prominent */}
           <AnimatedSection delay={0.3}>
-            <div className="relative my-8 rounded-2xl overflow-hidden bg-secondary/50 border border-border p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold tracking-[0.15em] uppercase text-accent font-body">
-                  {t('about.tag')}
-                </span>
-              </div>
-              <div className="w-full aspect-[16/10]">
+            <div className="relative my-8 -mx-4 overflow-hidden">
+              <div className="w-full aspect-[4/3]">
                 <EuropeMap />
               </div>
             </div>
