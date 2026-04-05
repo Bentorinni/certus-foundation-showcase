@@ -13,12 +13,11 @@ const SalesFunnel3: React.FC = () => {
     { icon: TrendingUp, title: t('funnel3.step4.title'), desc: t('funnel3.step4.desc') },
   ];
 
-  // Positions for the 4 corners around the center (desktop)
   const positions = [
-    'lg:col-start-1 lg:row-start-1', // top-left
-    'lg:col-start-3 lg:row-start-1', // top-right
-    'lg:col-start-1 lg:row-start-2', // bottom-left
-    'lg:col-start-3 lg:row-start-2', // bottom-right
+    'lg:col-start-1 lg:row-start-1',
+    'lg:col-start-3 lg:row-start-1',
+    'lg:col-start-1 lg:row-start-2',
+    'lg:col-start-3 lg:row-start-2',
   ];
 
   return (
@@ -46,9 +45,7 @@ const SalesFunnel3: React.FC = () => {
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">{t('funnel3.subtitle')}</p>
         </AnimatedSection>
 
-        {/* Grid with central element */}
         <div className="relative max-w-5xl mx-auto mb-16">
-          {/* Desktop: 3-col x 2-row grid, center cell = hub */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-6 lg:gap-8">
             {steps.map((step, i) => (
               <AnimatedSection
@@ -69,7 +66,7 @@ const SalesFunnel3: React.FC = () => {
               </AnimatedSection>
             ))}
 
-            {/* Central hub — spans middle cell on desktop, full width on mobile */}
+            {/* Central hub */}
             <AnimatedSection
               delay={0.3}
               className="lg:col-start-2 lg:row-start-1 lg:row-span-2 flex items-center justify-center sm:col-span-2 lg:col-span-1 order-first lg:order-none"
@@ -80,13 +77,18 @@ const SalesFunnel3: React.FC = () => {
                 <div className="absolute w-36 h-36 rounded-full border border-accent/20" />
                 <div className="absolute w-24 h-24 rounded-full bg-accent/5 border border-accent/30 shadow-[0_0_40px_hsl(142_100%_50%/0.15)]" />
 
-                {/* Connection lines to corners (desktop only) */}
+                {/* Connection lines — thick and vivid */}
                 <svg className="absolute inset-0 w-full h-full hidden lg:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  {/* Lines from center to corners */}
-                  <line x1="50" y1="50" x2="0" y2="15" stroke="hsl(142 100% 50% / 0.12)" strokeWidth="0.5" strokeDasharray="3 3" />
-                  <line x1="50" y1="50" x2="100" y2="15" stroke="hsl(142 100% 50% / 0.12)" strokeWidth="0.5" strokeDasharray="3 3" />
-                  <line x1="50" y1="50" x2="0" y2="85" stroke="hsl(142 100% 50% / 0.12)" strokeWidth="0.5" strokeDasharray="3 3" />
-                  <line x1="50" y1="50" x2="100" y2="85" stroke="hsl(142 100% 50% / 0.12)" strokeWidth="0.5" strokeDasharray="3 3" />
+                  <line x1="50" y1="50" x2="0" y2="10" stroke="hsl(142 100% 50% / 0.35)" strokeWidth="1.8" />
+                  <line x1="50" y1="50" x2="100" y2="10" stroke="hsl(142 100% 50% / 0.35)" strokeWidth="1.8" />
+                  <line x1="50" y1="50" x2="0" y2="90" stroke="hsl(142 100% 50% / 0.35)" strokeWidth="1.8" />
+                  <line x1="50" y1="50" x2="100" y2="90" stroke="hsl(142 100% 50% / 0.35)" strokeWidth="1.8" />
+                  {/* Glowing dots at endpoints */}
+                  <circle cx="50" cy="50" r="2" fill="hsl(142 100% 50% / 0.6)" />
+                  <circle cx="0" cy="10" r="1.5" fill="hsl(142 100% 50% / 0.4)" />
+                  <circle cx="100" cy="10" r="1.5" fill="hsl(142 100% 50% / 0.4)" />
+                  <circle cx="0" cy="90" r="1.5" fill="hsl(142 100% 50% / 0.4)" />
+                  <circle cx="100" cy="90" r="1.5" fill="hsl(142 100% 50% / 0.4)" />
                 </svg>
 
                 {/* Center icon */}
