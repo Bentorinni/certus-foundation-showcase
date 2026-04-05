@@ -46,7 +46,7 @@ const SalesFunnel3: React.FC = () => {
         </AnimatedSection>
 
         <div className="relative max-w-5xl mx-auto mb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 lg:gap-8">
             {steps.map((step, i) => (
               <AnimatedSection
                 key={i}
@@ -69,7 +69,7 @@ const SalesFunnel3: React.FC = () => {
             {/* Central hub */}
             <AnimatedSection
               delay={0.3}
-              className="lg:col-start-2 lg:row-start-1 lg:row-span-2 flex items-center justify-center sm:col-span-2 lg:col-span-1 order-first lg:order-none"
+              className="lg:col-start-2 lg:row-start-1 lg:row-span-2 flex items-center justify-center order-first lg:order-none"
             >
               <div className="relative w-full h-full min-h-[220px] lg:min-h-0 flex items-center justify-center">
                 {/* Glow rings */}
@@ -79,30 +79,11 @@ const SalesFunnel3: React.FC = () => {
 
                 {/* Arrows from center to cards */}
                 <svg className="absolute inset-0 w-full h-full hidden lg:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <defs>
-                    <marker id="arrowTL" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                    <marker id="arrowTR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                    <marker id="arrowBL" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                    <marker id="arrowBR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0,0 L8,3 L0,6" fill="none" stroke="hsl(142 100% 50% / 0.5)" strokeWidth="1" />
-                    </marker>
-                  </defs>
-                  {/* Center to top-left card center */}
-                  <line x1="50" y1="50" x2="0" y2="25" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowTL)" />
-                  {/* Center to top-right card center */}
-                  <line x1="50" y1="50" x2="100" y2="25" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowTR)" />
-                  {/* Center to bottom-left card center */}
-                  <line x1="50" y1="50" x2="0" y2="75" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowBL)" />
-                  {/* Center to bottom-right card center */}
-                  <line x1="50" y1="50" x2="100" y2="75" stroke="hsl(142 100% 50% / 0.3)" strokeWidth="0.8" markerEnd="url(#arrowBR)" />
-                  {/* Center dot */}
-                  <circle cx="50" cy="50" r="1.5" fill="hsl(142 100% 50% / 0.6)" />
+                  <line x1="50" y1="50" x2="0" y2="25" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <line x1="50" y1="50" x2="100" y2="25" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <line x1="50" y1="50" x2="0" y2="75" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <line x1="50" y1="50" x2="100" y2="75" stroke="hsl(142 100% 50% / 0.25)" strokeWidth="0.5" />
+                  <circle cx="50" cy="50" r="1.5" fill="hsl(142 100% 50% / 0.5)" />
                 </svg>
 
                 {/* Center icon */}
