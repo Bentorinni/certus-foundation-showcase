@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-foreground">6. Kontakt</h3>
             <p>
               W sprawach związanych z ochroną danych osobowych prosimy o kontakt pod adresem 
-              e-mail: biuro@funduscertus.pl
+              e-mail: funduscertus@gmail.com
             </p>
           </div>
         </DialogContent>
