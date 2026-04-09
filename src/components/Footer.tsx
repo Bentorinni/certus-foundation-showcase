@@ -52,7 +52,11 @@ const Footer: React.FC = () => {
           <div className="h-px w-full bg-primary-foreground/10 mb-8" />
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-primary-foreground/50 font-body">
-              © {new Date().getFullYear()} FUNDUS CERTUS. {t('footer.rights')}
+              © 2016-2026 FUNDUS CERTUS. {t('footer.rights')}
+            </p>
+            <p className="text-sm text-primary-foreground/50 font-body">
+              Strona stworzona przez:{' '}
+              <a href="https://gishdev.pl" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors duration-300">GishDev</a>
             </p>
             <button
               onClick={() => setPrivacyOpen(true)}
