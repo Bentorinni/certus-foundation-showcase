@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Language, languageNames } from '../i18n/translations';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
-import logo from '../assets/logo.png';
+import SpinningGlobe from './SpinningGlobe';
 
 const Navbar: React.FC = () => {
   const { t, language, setLanguage } = useLanguage();
