@@ -31,7 +31,7 @@ END:VCARD`;
   return (
     <div className="min-h-screen bg-primary text-primary-foreground flex flex-col">
       {/* Header */}
-      <header className="relative overflow-hidden">
+      <header className="relative overflow-visible">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary" />
         <div
           className="absolute inset-0"
