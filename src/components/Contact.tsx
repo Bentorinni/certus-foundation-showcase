@@ -9,10 +9,29 @@ const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t('contact.success'));
-    setForm({ name: '', email: '', phone: '', message: '' });
+    setSending(true);
+    try {
+      const res = await fetch('https://funduscertus.eu/contact-form.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        toast.success(t('contact.success'));
+        setForm({ name: '', email: '', phone: '', message: '' });
+      } else {
+        toast.error(data.error || 'Wystąpił błąd przy wysyłaniu.');
+      }
+    } catch {
+      toast.error('Nie udało się połączyć z serwerem.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
