@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-20">
           {/* Logo */}
-          <button onClick={() => scrollTo('#home')} className="flex items-center gap-2 sm:gap-3 group">
+          <button onClick={() => scrollTo('#home')} className="flex items-center gap-2 sm:gap-3 group" aria-label="Fundus Certus — strona główna">
             <div className="h-9 w-9 sm:h-14 sm:w-14 flex items-center justify-center">
               <SpinningGlobe />
             </div>
