@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
             <AnimatedSection delay={0.1}>
               <div className="flex items-center gap-2 mb-8 justify-center lg:justify-start">
                 <div className="h-px w-12 bg-gradient-gold" />
-                <span className="text-accent text-sm font-semibold tracking-[0.2em] uppercase font-body">
+                <span className="text-accent text-sm font-semibold tracking-[0.2em] uppercase font-body notranslate" translate="no">
                   Fundus Certus
                 </span>
               </div>
