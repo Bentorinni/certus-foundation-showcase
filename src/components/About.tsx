@@ -14,7 +14,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 lg:py-32 bg-background">
+    <section id="about" aria-label="O firmie" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile layout: text + map integrated */}
         <div className="lg:hidden">
