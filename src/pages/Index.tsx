@@ -12,6 +12,7 @@ import SalesFunnel4 from '../components/SalesFunnel4';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import CookieConsent from '../components/CookieConsent';
 
 const Index: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const Index: React.FC = () => {
         <SalesFunnel4 />
         <Contact />
         <Footer />
+        <CookieConsent />
       </div>
     </LanguageProvider>
   );

@@ -104,11 +104,18 @@ const Footer: React.FC = () => {
               ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu wobec 
               przetwarzania. W celu realizacji tych praw prosimy o kontakt mailowy.
             </p>
-            <h3 className="font-semibold text-foreground">5. Pliki cookies</h3>
+            <h3 className="font-semibold text-foreground">5. Pliki cookies i Google Analytics</h3>
             <p>
-              Strona może wykorzystywać pliki cookies w celu zapewnienia prawidłowego 
-              funkcjonowania serwisu oraz analizy ruchu. Użytkownik może zmienić ustawienia 
-              cookies w swojej przeglądarce.
+              Strona wykorzystuje pliki cookies, w tym cookies Google Analytics, w celu 
+              analizy ruchu na stronie i poprawy jakości świadczonych usług. Google Analytics 
+              zbiera anonimowe dane dotyczące sposobu korzystania ze strony (np. odwiedzane 
+              podstrony, czas wizyty, źródło ruchu).
+            </p>
+            <p>
+              Przy pierwszej wizycie użytkownik jest pytany o zgodę na wykorzystanie plików 
+              cookies analitycznych. Użytkownik może w każdej chwili zmienić swoją decyzję, 
+              usuwając dane z przeglądarki lub zmieniając ustawienia cookies. Odrzucenie zgody 
+              powoduje, że żadne dane analityczne nie są zbierane.
             </p>
             <h3 className="font-semibold text-foreground">6. Kontakt</h3>
             <p>
