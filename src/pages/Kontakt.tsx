@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { MapPin, Phone, Mail, Link2, ArrowLeft, Download } from 'lucide-react';
+import { Language, languageNames } from '../i18n/translations';
+import { MapPin, Phone, Mail, Link2, ArrowLeft, Download, Globe, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import qrCode from '../assets/qr-code-new.png';
 import SpinningGlobe from '../components/SpinningGlobe';
 
 const Kontakt: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
+  const [isLangOpen, setIsLangOpen] = useState(false);
 
   const handleSaveContact = () => {
     const vcard = `BEGIN:VCARD
@@ -40,13 +42,42 @@ END:VCARD`;
         />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-12 sm:pb-16">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm font-body text-primary-foreground/60 hover:text-accent transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {t('kontakt.back')}
-          </Link>
+          <div className="flex items-center justify-between mb-8">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm font-body text-primary-foreground/60 hover:text-accent transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              {t('kontakt.back')}
+            </Link>
+
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="flex items-center gap-1.5 text-sm font-medium transition-colors text-primary-foreground/70 hover:text-primary-foreground"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="uppercase">{language}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isLangOpen && (
+                <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[160px] z-50">
+                  {(Object.keys(languageNames) as Language[]).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => { setLanguage(lang); setIsLangOpen(false); }}
+                      className={`block w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-secondary ${
+                        language === lang ? 'text-accent font-semibold bg-secondary' : 'text-foreground/80'
+                      }`}
+                    >
+                      {languageNames[lang]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
 
           <div className="flex items-center gap-3 mb-4">
             <div className="h-12 w-12">
@@ -118,7 +149,7 @@ END:VCARD`;
               className="group w-full bg-gradient-gold text-accent-foreground py-4 rounded-xl font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(142_100%_50%/0.3)] hover:scale-[1.01] font-body mt-6"
             >
               <Download className="w-4 h-4" />
-              Save Contact
+              {t('kontakt.saveContact')}
             </button>
           </div>
 
