@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
               {/* QR Code */}
               <div className="relative p-6 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group text-center mt-6">
                 <div className="inline-block p-3 bg-white rounded-xl shadow-md mb-3 group-hover:shadow-accent/20 transition-shadow">
-                  <img src={qrCode} alt="QR Code - Fundus Certus" className="w-28 h-28 object-contain" />
+                  <img src={qrCode} alt="Kod QR — dane kontaktowe Fundus Certus" className="w-28 h-28 object-contain notranslate" translate="no" />
                 </div>
                 <p className="font-display font-bold text-base mb-1">{t('contact.qrTitle')}</p>
                 <p className="text-muted-foreground text-xs font-body">{t('contact.qrSubtitle')}</p>
@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
                   <Mail className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                   <div>
                     <p className="font-semibold text-sm font-body">E-mail</p>
-                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors">funduscertus@gmail.com</p>
+                    <p className="text-muted-foreground text-sm font-body group-hover:text-accent transition-colors notranslate" translate="no">funduscertus@gmail.com</p>
                   </div>
                 </a>
               </div>
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Fundus Certus office location"
+                  title="Lokalizacja biura Fundus Certus"
                 />
               </div>
             </div>
