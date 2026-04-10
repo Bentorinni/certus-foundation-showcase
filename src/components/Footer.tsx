@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               © 2016-2026 FUNDUS CERTUS. {t('footer.rights')}
             </p>
             <p className="text-sm text-primary-foreground/50 font-body">
-              Strona stworzona przez:{' '}
+              {t('footer.createdBy')}{' '}
               <a href="https://gishdev.pl" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors duration-300">GishDev</a>
             </p>
             <button

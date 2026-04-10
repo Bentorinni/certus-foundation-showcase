@@ -128,6 +128,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'Wszelkie prawa zastrzeżone.',
     'footer.license': 'Licencja pośrednika nr 11751 — Ministerstwo Infrastruktury RP',
     'footer.privacy': 'Polityka prywatności',
+    'footer.createdBy': 'Strona stworzona przez:',
 
     // Cookies
     'cookies.message': 'Ta strona wykorzystuje pliki cookies (Google Analytics) w celu analizy ruchu i poprawy jakości usług. Czy wyrażasz zgodę na ich używanie?',
@@ -245,6 +246,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'All rights reserved.',
     'footer.license': 'Broker license no. 11751 — Ministry of Infrastructure of Poland',
     'footer.privacy': 'Privacy Policy',
+    'footer.createdBy': 'Website created by:',
 
     'cookies.message': 'This website uses cookies (Google Analytics) to analyze traffic and improve the quality of services. Do you consent to their use?',
     'cookies.accept': 'Accept',
@@ -360,6 +362,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'Alle Rechte vorbehalten.',
     'footer.license': 'Maklerlizenz Nr. 11751 — Ministerium für Infrastruktur der Republik Polen',
     'footer.privacy': 'Datenschutzrichtlinie',
+    'footer.createdBy': 'Webseite erstellt von:',
 
     'cookies.message': 'Diese Website verwendet Cookies (Google Analytics) zur Analyse des Datenverkehrs und zur Verbesserung der Servicequalität. Stimmen Sie deren Verwendung zu?',
     'cookies.accept': 'Akzeptieren',
@@ -475,6 +478,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'Tutti i diritti riservati.',
     'footer.license': 'Licenza broker n. 11751 — Ministero delle Infrastrutture della Polonia',
     'footer.privacy': 'Informativa sulla privacy',
+    'footer.createdBy': 'Sito creato da:',
 
     'cookies.message': 'Questo sito utilizza cookie (Google Analytics) per analizzare il traffico e migliorare la qualità dei servizi. Acconsenti al loro utilizzo?',
     'cookies.accept': 'Accetto',
@@ -590,6 +594,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'Все права защищены.',
     'footer.license': 'Лицензия брокера № 11751 — Министерство инфраструктуры Польши',
     'footer.privacy': 'Политика конфиденциальности',
+    'footer.createdBy': 'Сайт создан:',
 
     'cookies.message': 'Этот сайт использует файлы cookie (Google Analytics) для анализа трафика и повышения качества услуг. Вы согласны на их использование?',
     'cookies.accept': 'Принимаю',
