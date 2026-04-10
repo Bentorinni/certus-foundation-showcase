@@ -28,7 +28,7 @@ const Services: React.FC = () => {
   );
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-secondary">
+    <section id="services" aria-label="Usługi" className="py-24 lg:py-32 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">

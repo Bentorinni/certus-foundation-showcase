@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-primary">
+    <section id="home" aria-label="Strona główna" className="relative min-h-screen flex items-center overflow-hidden bg-primary">
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary" />
       <div
