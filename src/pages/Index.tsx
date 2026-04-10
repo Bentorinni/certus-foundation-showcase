@@ -1,5 +1,5 @@
 import React from 'react';
-import { LanguageProvider } from '../i18n/LanguageContext';
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
@@ -16,8 +16,7 @@ import CookieConsent from '../components/CookieConsent';
 
 const Index: React.FC = () => {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen pt-14 sm:pt-20">
+    <div className="min-h-screen pt-14 sm:pt-20">
         <Navbar />
         <Hero />
         <Stats />
@@ -31,8 +30,7 @@ const Index: React.FC = () => {
         <Contact />
         <Footer />
         <CookieConsent />
-      </div>
-    </LanguageProvider>
+    </div>
   );
 };
 
