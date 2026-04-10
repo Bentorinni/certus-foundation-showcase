@@ -85,7 +85,7 @@ const Testimonials: React.FC = () => {
                       </div>
                     )}
                     <div>
-                      <p className="font-semibold text-sm font-body text-white">{item.name}</p>
+                      <p className="font-semibold text-sm font-body text-white notranslate" translate="no">{item.name}</p>
                       <p className="text-xs text-white/40 font-body">
                         {item.isCompany
                           ? (language === 'pl' ? 'Firma' : language === 'de' ? 'Unternehmen' : language === 'it' ? 'Azienda' : language === 'ru' ? 'Компания' : 'Company')

@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           </DialogHeader>
           <div className="space-y-4 text-sm text-foreground/80 font-body leading-relaxed">
             <p>
-              Administratorem danych osobowych jest FUNDUS CERTUS z siedzibą w Polsce. 
+              Administratorem danych osobowych jest <span className="notranslate" translate="no">FUNDUS CERTUS</span> z siedzibą w Polsce. 
               Dane osobowe przetwarzane są zgodnie z Rozporządzeniem Parlamentu Europejskiego 
               i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO).
             </p>
