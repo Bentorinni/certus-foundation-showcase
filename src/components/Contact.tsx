@@ -7,7 +7,7 @@ import qrCode from '../assets/qr-code-new.png';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', website: '' });
 
   const [sending, setSending] = useState(false);
 
