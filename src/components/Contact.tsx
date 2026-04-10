@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
       const data = await res.json();
       if (res.ok && data.success) {
         toast.success(t('contact.success'));
-        setForm({ name: '', email: '', phone: '', message: '' });
+        setForm({ name: '', email: '', phone: '', message: '', website: '' });
       } else {
         toast.error(data.error || 'Wystąpił błąd przy wysyłaniu.');
       }
