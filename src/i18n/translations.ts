@@ -147,6 +147,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.insurance': 'Ubezpieczenie OC',
     'kontakt.insuranceValue': 'PZU SA — pełna ochrona odpowiedzialności cywilnej',
     'kontakt.saveContact': 'Zapisz kontakt',
+  },
 
   en: {
     'nav.home': 'Home',
@@ -261,6 +262,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.insurance': 'Liability insurance',
     'kontakt.insuranceValue': 'PZU SA — full civil liability coverage',
     'kontakt.saveContact': 'Save Contact',
+  },
 
   de: {
     'nav.home': 'Startseite',
@@ -375,6 +377,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.insurance': 'Haftpflichtversicherung',
     'kontakt.insuranceValue': 'PZU SA — volle Haftpflichtversicherung',
     'kontakt.saveContact': 'Kontakt speichern',
+  },
 
   it: {
     'nav.home': 'Home',
@@ -489,6 +492,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.insurance': 'Assicurazione RC',
     'kontakt.insuranceValue': 'PZU SA — copertura completa responsabilità civile',
     'kontakt.saveContact': 'Salva contatto',
+  },
 
   ru: {
     'nav.home': 'Главная',
