@@ -56,6 +56,19 @@ const Contact: React.FC = () => {
           <AnimatedSection direction="left">
             <div className="flex flex-col h-full">
               <form onSubmit={handleSubmit} className="space-y-6 flex-1">
+                {/* Honeypot — hidden from humans, bots fill it */}
+                <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={(e) => setForm({ ...form, website: e.target.value })}
+                  />
+                </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium font-body mb-2">{t('contact.name')}</label>
