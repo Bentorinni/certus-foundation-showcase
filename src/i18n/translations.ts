@@ -146,7 +146,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.licenseValue': 'Nr 11751 — Ministerstwo Infrastruktury RP',
     'kontakt.insurance': 'Ubezpieczenie OC',
     'kontakt.insuranceValue': 'PZU SA — pełna ochrona odpowiedzialności cywilnej',
-  },
+    'kontakt.saveContact': 'Zapisz kontakt',
 
   en: {
     'nav.home': 'Home',
@@ -260,7 +260,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.licenseValue': 'No. 11751 — Ministry of Infrastructure of Poland',
     'kontakt.insurance': 'Liability insurance',
     'kontakt.insuranceValue': 'PZU SA — full civil liability coverage',
-  },
+    'kontakt.saveContact': 'Save Contact',
 
   de: {
     'nav.home': 'Startseite',
@@ -374,7 +374,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.licenseValue': 'Nr. 11751 — Ministerium für Infrastruktur Polens',
     'kontakt.insurance': 'Haftpflichtversicherung',
     'kontakt.insuranceValue': 'PZU SA — volle Haftpflichtversicherung',
-  },
+    'kontakt.saveContact': 'Kontakt speichern',
 
   it: {
     'nav.home': 'Home',
@@ -488,7 +488,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.licenseValue': 'N. 11751 — Ministero delle Infrastrutture della Polonia',
     'kontakt.insurance': 'Assicurazione RC',
     'kontakt.insuranceValue': 'PZU SA — copertura completa responsabilità civile',
-  },
+    'kontakt.saveContact': 'Salva contatto',
 
   ru: {
     'nav.home': 'Главная',
@@ -602,5 +602,5 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.licenseValue': '№ 11751 — Министерство инфраструктуры Польши',
     'kontakt.insurance': 'Страхование ответственности',
     'kontakt.insuranceValue': 'PZU SA — полное покрытие гражданской ответственности',
-  },
+    'kontakt.saveContact': 'Сохранить контакт',
 };
