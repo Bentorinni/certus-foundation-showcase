@@ -81,11 +81,11 @@ END:VCARD`;
             <div className="h-12 w-12">
               <SpinningGlobe />
             </div>
-            <h1 className="text-3xl sm:text-5xl font-display font-bold">
+            <h1 className="text-3xl sm:text-5xl font-display font-bold notranslate" translate="no">
               Jarosław Dziedzic
             </h1>
           </div>
-          <p className="text-primary-foreground/70 font-body text-base sm:text-lg tracking-wide uppercase font-semibold">
+          <p className="text-primary-foreground/70 font-body text-base sm:text-lg tracking-wide uppercase font-semibold notranslate" translate="no">
             FUNDUS CERTUS REAL ESTATE
           </p>
         </div>
@@ -112,7 +112,7 @@ END:VCARD`;
             className="flex items-center gap-4 p-4 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group"
           >
             <Mail className="w-5 h-5 text-accent shrink-0" />
-            <p className="font-semibold text-sm font-body text-foreground group-hover:text-accent transition-colors">funduscertus@gmail.com</p>
+            <p className="font-semibold text-sm font-body text-foreground group-hover:text-accent transition-colors notranslate" translate="no">funduscertus@gmail.com</p>
           </a>
 
           <a
@@ -122,7 +122,7 @@ END:VCARD`;
             className="flex items-center gap-4 p-4 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group"
           >
             <Link2 className="w-5 h-5 text-accent shrink-0" />
-            <p className="font-semibold text-sm font-body text-foreground group-hover:text-accent transition-colors">https://funduscertus.eu/</p>
+            <p className="font-semibold text-sm font-body text-foreground group-hover:text-accent transition-colors notranslate" translate="no">https://funduscertus.eu/</p>
           </a>
 
           <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary border border-border">
