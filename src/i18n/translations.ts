@@ -603,4 +603,5 @@ export const translations: Record<Language, Record<string, string>> = {
     'kontakt.insurance': 'Страхование ответственности',
     'kontakt.insuranceValue': 'PZU SA — полное покрытие гражданской ответственности',
     'kontakt.saveContact': 'Сохранить контакт',
+  },
 };
