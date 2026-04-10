@@ -133,6 +133,19 @@ export const translations: Record<Language, Record<string, string>> = {
     'cookies.message': 'Ta strona wykorzystuje pliki cookies (Google Analytics) w celu analizy ruchu i poprawy jakości usług. Czy wyrażasz zgodę na ich używanie?',
     'cookies.accept': 'Akceptuję',
     'cookies.reject': 'Odrzucam',
+
+    // Kontakt page
+    'kontakt.back': '← Powrót na stronę główną',
+    'kontakt.subtitle': 'Profesjonalne pośrednictwo nieruchomości, organizacja inwestycji i zarządzanie nieruchomościami na terenie całej Polski.',
+    'kontakt.infoTitle': 'Dane kontaktowe',
+    'kontakt.phone': 'Telefon',
+    'kontakt.email': 'E-mail',
+    'kontakt.address': 'Adres biura',
+    'kontakt.website': 'Strona internetowa',
+    'kontakt.license': 'Licencja pośrednika',
+    'kontakt.licenseValue': 'Nr 11751 — Ministerstwo Infrastruktury RP',
+    'kontakt.insurance': 'Ubezpieczenie OC',
+    'kontakt.insuranceValue': 'PZU SA — pełna ochrona odpowiedzialności cywilnej',
   },
 
   en: {
@@ -235,6 +248,18 @@ export const translations: Record<Language, Record<string, string>> = {
     'cookies.message': 'This website uses cookies (Google Analytics) to analyze traffic and improve the quality of services. Do you consent to their use?',
     'cookies.accept': 'Accept',
     'cookies.reject': 'Reject',
+
+    'kontakt.back': '← Back to homepage',
+    'kontakt.subtitle': 'Professional real estate brokerage, investment organization and property management across Poland.',
+    'kontakt.infoTitle': 'Contact details',
+    'kontakt.phone': 'Phone',
+    'kontakt.email': 'E-mail',
+    'kontakt.address': 'Office address',
+    'kontakt.website': 'Website',
+    'kontakt.license': 'Broker license',
+    'kontakt.licenseValue': 'No. 11751 — Ministry of Infrastructure of Poland',
+    'kontakt.insurance': 'Liability insurance',
+    'kontakt.insuranceValue': 'PZU SA — full civil liability coverage',
   },
 
   de: {
@@ -337,6 +362,18 @@ export const translations: Record<Language, Record<string, string>> = {
     'cookies.message': 'Diese Website verwendet Cookies (Google Analytics) zur Analyse des Datenverkehrs und zur Verbesserung der Servicequalität. Stimmen Sie deren Verwendung zu?',
     'cookies.accept': 'Akzeptieren',
     'cookies.reject': 'Ablehnen',
+
+    'kontakt.back': '← Zurück zur Startseite',
+    'kontakt.subtitle': 'Professionelle Immobilienvermittlung, Investitionsorganisation und Immobilienverwaltung in ganz Polen.',
+    'kontakt.infoTitle': 'Kontaktdaten',
+    'kontakt.phone': 'Telefon',
+    'kontakt.email': 'E-Mail',
+    'kontakt.address': 'Büroadresse',
+    'kontakt.website': 'Webseite',
+    'kontakt.license': 'Maklerlizenz',
+    'kontakt.licenseValue': 'Nr. 11751 — Ministerium für Infrastruktur Polens',
+    'kontakt.insurance': 'Haftpflichtversicherung',
+    'kontakt.insuranceValue': 'PZU SA — volle Haftpflichtversicherung',
   },
 
   it: {
@@ -439,6 +476,18 @@ export const translations: Record<Language, Record<string, string>> = {
     'cookies.message': 'Questo sito utilizza cookie (Google Analytics) per analizzare il traffico e migliorare la qualità dei servizi. Acconsenti al loro utilizzo?',
     'cookies.accept': 'Accetto',
     'cookies.reject': 'Rifiuto',
+
+    'kontakt.back': '← Torna alla homepage',
+    'kontakt.subtitle': 'Intermediazione immobiliare professionale, organizzazione di investimenti e gestione immobiliare in tutta la Polonia.',
+    'kontakt.infoTitle': 'Dati di contatto',
+    'kontakt.phone': 'Telefono',
+    'kontakt.email': 'E-mail',
+    'kontakt.address': 'Indirizzo ufficio',
+    'kontakt.website': 'Sito web',
+    'kontakt.license': 'Licenza broker',
+    'kontakt.licenseValue': 'N. 11751 — Ministero delle Infrastrutture della Polonia',
+    'kontakt.insurance': 'Assicurazione RC',
+    'kontakt.insuranceValue': 'PZU SA — copertura completa responsabilità civile',
   },
 
   ru: {
@@ -541,5 +590,17 @@ export const translations: Record<Language, Record<string, string>> = {
     'cookies.message': 'Этот сайт использует файлы cookie (Google Analytics) для анализа трафика и повышения качества услуг. Вы согласны на их использование?',
     'cookies.accept': 'Принимаю',
     'cookies.reject': 'Отклоняю',
+
+    'kontakt.back': '← Вернуться на главную',
+    'kontakt.subtitle': 'Профессиональное посредничество в сфере недвижимости, организация инвестиций и управление недвижимостью по всей Польше.',
+    'kontakt.infoTitle': 'Контактные данные',
+    'kontakt.phone': 'Телефон',
+    'kontakt.email': 'Эл. почта',
+    'kontakt.address': 'Адрес офиса',
+    'kontakt.website': 'Веб-сайт',
+    'kontakt.license': 'Лицензия брокера',
+    'kontakt.licenseValue': '№ 11751 — Министерство инфраструктуры Польши',
+    'kontakt.insurance': 'Страхование ответственности',
+    'kontakt.insuranceValue': 'PZU SA — полное покрытие гражданской ответственности',
   },
 };
