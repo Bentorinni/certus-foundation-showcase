@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
             <div className="h-9 w-9 sm:h-14 sm:w-14 flex items-center justify-center">
               <SpinningGlobe />
             </div>
-            <span className="text-lg sm:text-3xl font-display font-extrabold tracking-tight">
+            <span className="text-lg sm:text-3xl font-display font-extrabold tracking-tight notranslate" translate="no">
               <span className="text-primary-foreground">FUNDUS</span>
               <span className="text-gradient-gold"> CERTUS</span>
             </span>
