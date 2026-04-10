@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Cookie } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const GA_ID = 'G-XXXXXXXXXX'; // Replace with actual GA ID
@@ -64,7 +65,14 @@ const CookieConsent: React.FC = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 sm:p-6">
       <div className="max-w-4xl mx-auto bg-card border border-border rounded-xl shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div className="flex-1">
+        <Cookie className="h-8 w-8 text-accent shrink-0 hidden sm:block" />
+        <div className="flex items-center gap-3 sm:hidden">
+          <Cookie className="h-6 w-6 text-accent shrink-0" />
+          <p className="text-sm text-foreground font-body leading-relaxed">
+            {t('cookies.message')}
+          </p>
+        </div>
+        <div className="flex-1 hidden sm:block">
           <p className="text-sm text-foreground font-body leading-relaxed">
             {t('cookies.message')}
           </p>
