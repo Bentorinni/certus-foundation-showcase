@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
             <div>
-              <span className="text-xl sm:text-2xl font-display font-bold">
+              <span className="text-xl sm:text-2xl font-display font-bold notranslate" translate="no">
                 FUNDUS <span className="text-gradient-gold">CERTUS</span>
               </span>
               <p className="text-xs text-primary-foreground/40 font-body mt-2">
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
           <div className="h-px w-full bg-primary-foreground/10 mb-8" />
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-primary-foreground/50 font-body">
-              © 2016-2026 FUNDUS CERTUS. {t('footer.rights')}
+              <span className="notranslate" translate="no">© 2016-2026 FUNDUS CERTUS.</span> {t('footer.rights')}
             </p>
             <p className="text-sm text-primary-foreground/50 font-body">
               {t('footer.createdBy')}{' '}
