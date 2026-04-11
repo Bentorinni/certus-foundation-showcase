@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import AnimatedSection from './AnimatedSection';
 import { Send, MapPin, Phone, Mail } from 'lucide-react';
 import { toast } from 'sonner';
-import qrCode from '../assets/qr-code-new.png';
+import { QRCodeSVG } from 'qrcode.react';
 import {
   Dialog,
   DialogContent,
@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
                 {/* QR Code */}
                 <div className="relative p-6 rounded-xl bg-secondary border border-border hover:border-accent/50 transition-all duration-300 group text-center mt-6">
                   <div className="inline-block p-3 bg-white rounded-xl shadow-md mb-3 group-hover:shadow-accent/20 transition-shadow">
-                    <img src={qrCode} alt="Kod QR — dane kontaktowe Fundus Certus" className="w-28 h-28 object-contain notranslate" translate="no" />
+                    <QRCodeSVG value="https://funduscertus.eu/contact" size={112} level="M" />
                   </div>
                   <p className="font-display font-bold text-base mb-1">{t('contact.qrTitle')}</p>
                   <p className="text-muted-foreground text-xs font-body">{t('contact.qrSubtitle')}</p>
