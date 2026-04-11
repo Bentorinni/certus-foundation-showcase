@@ -8,11 +8,18 @@ import qrCode from '../assets/qr-code-new.png';
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', website: '' });
+  const [consent, setConsent] = useState(false);
+  const [consentError, setConsentError] = useState(false);
 
   const [sending, setSending] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) {
+      setConsentError(true);
+      return;
+    }
+    setConsentError(false);
     setSending(true);
     try {
       const res = await fetch('https://funduscertus.eu/contact-form.php', {
@@ -24,6 +31,7 @@ const Contact: React.FC = () => {
       if (res.ok && data.success) {
         toast.success(t('contact.success'));
         setForm({ name: '', email: '', phone: '', message: '', website: '' });
+        setConsent(false);
       } else {
         toast.error(data.error || 'Wystąpił błąd przy wysyłaniu.');
       }
@@ -110,6 +118,21 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground font-body text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none"
                   />
                 </div>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    checked={consent}
+                    onChange={(e) => { setConsent(e.target.checked); if (e.target.checked) setConsentError(false); }}
+                    className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent shrink-0"
+                  />
+                  <label htmlFor="consent" className="text-xs text-muted-foreground font-body leading-relaxed cursor-pointer">
+                    {t('contact.consent')}
+                  </label>
+                </div>
+                {consentError && (
+                  <p className="text-xs text-destructive font-body">{t('contact.consentRequired')}</p>
+                )}
                 <button
                   type="submit"
                   disabled={sending}

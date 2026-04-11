@@ -24,6 +24,8 @@ const Footer: React.FC = () => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const privacySections = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
+
   return (
     <>
       <footer className="bg-primary text-primary-foreground pt-16 pb-8">
@@ -71,57 +73,23 @@ const Footer: React.FC = () => {
       <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-xl font-display">{t('footer.privacy')}</DialogTitle>
+            <DialogTitle className="text-xl font-display">{t('privacy.title')}</DialogTitle>
             <DialogDescription className="sr-only">
-              {t('footer.privacy')}
+              {t('privacy.title')}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 text-sm text-foreground/80 font-body leading-relaxed">
-            <p>
-              Administratorem danych osobowych jest <span className="notranslate" translate="no">FUNDUS CERTUS</span> z siedzibą w Polsce. 
-              Dane osobowe przetwarzane są zgodnie z Rozporządzeniem Parlamentu Europejskiego 
-              i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO).
-            </p>
-            <h3 className="font-semibold text-foreground">1. Zakres zbieranych danych</h3>
-            <p>
-              Zbieramy dane osobowe podane dobrowolnie za pośrednictwem formularza kontaktowego: 
-              imię i nazwisko, adres e-mail, numer telefonu oraz treść wiadomości.
-            </p>
-            <h3 className="font-semibold text-foreground">2. Cel przetwarzania danych</h3>
-            <p>
-              Dane osobowe przetwarzane są w celu udzielenia odpowiedzi na zapytania, 
-              świadczenia usług pośrednictwa w obrocie nieruchomościami, zarządzania 
-              nieruchomościami oraz realizacji obowiązków prawnych.
-            </p>
-            <h3 className="font-semibold text-foreground">3. Okres przechowywania</h3>
-            <p>
-              Dane przechowywane są przez okres niezbędny do realizacji celów, dla których 
-              zostały zebrane, nie dłużej niż 5 lat od ostatniego kontaktu.
-            </p>
-            <h3 className="font-semibold text-foreground">4. Prawa użytkownika</h3>
-            <p>
-              Użytkownik ma prawo do: dostępu do swoich danych, ich sprostowania, usunięcia, 
-              ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu wobec 
-              przetwarzania. W celu realizacji tych praw prosimy o kontakt mailowy.
-            </p>
-            <h3 className="font-semibold text-foreground">5. Pliki cookies i Google Analytics</h3>
-            <p>
-              Strona wykorzystuje pliki cookies, w tym cookies Google Analytics, w celu 
-              analizy ruchu na stronie i poprawy jakości świadczonych usług. Google Analytics 
-              zbiera anonimowe dane dotyczące sposobu korzystania ze strony (np. odwiedzane 
-              podstrony, czas wizyty, źródło ruchu).
-            </p>
-            <p>
-              Przy pierwszej wizycie użytkownik jest pytany o zgodę na wykorzystanie plików 
-              cookies analitycznych. Użytkownik może w każdej chwili zmienić swoją decyzję, 
-              usuwając dane z przeglądarki lub zmieniając ustawienia cookies. Odrzucenie zgody 
-              powoduje, że żadne dane analityczne nie są zbierane.
-            </p>
-            <h3 className="font-semibold text-foreground">6. Kontakt</h3>
-            <p>
-              W sprawach związanych z ochroną danych osobowych prosimy o kontakt pod adresem 
-              e-mail: funduscertus@gmail.com
-            </p>
+            <p>{t('privacy.admin')}</p>
+
+            {privacySections.map((section) => (
+              <div key={section}>
+                <h3 className="font-semibold text-foreground">{t(`privacy.${section}.title`)}</h3>
+                <p className="whitespace-pre-line">{t(`privacy.${section}.text`)}</p>
+                {t(`privacy.${section}.list`) !== `privacy.${section}.list` && (
+                  <p className="whitespace-pre-line mt-1">{t(`privacy.${section}.list`)}</p>
+                )}
+              </div>
+            ))}
           </div>
         </DialogContent>
       </Dialog>
