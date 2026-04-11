@@ -8,9 +8,13 @@ import {
   DialogDescription,
 } from './ui/dialog';
 
+const privacySections = ['s1', 's2', 's3', 's4', 's5', 's6', 's7'] as const;
+const gdprSections = ['s1', 's2', 's3', 's4', 's5'] as const;
+
 const Footer: React.FC = () => {
   const { t } = useLanguage();
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [gdprOpen, setGdprOpen] = useState(false);
 
   const navLinks = [
     { href: '#home', label: t('nav.home') },
@@ -24,7 +28,7 @@ const Footer: React.FC = () => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const privacySections = ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9'] as const;
+  const linkClass = "text-sm text-primary-foreground/50 hover:text-accent font-body transition-colors duration-300 underline underline-offset-4 decoration-primary-foreground/20 hover:decoration-accent";
 
   return (
     <>
@@ -60,27 +64,28 @@ const Footer: React.FC = () => {
               {t('footer.createdBy')}{' '}
               <a href="https://gishdev.pl" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors duration-300">GishDev</a>
             </p>
-            <button
-              onClick={() => setPrivacyOpen(true)}
-              className="text-sm text-primary-foreground/50 hover:text-accent font-body transition-colors duration-300 underline underline-offset-4 decoration-primary-foreground/20 hover:decoration-accent"
-            >
-              {t('footer.privacy')}
-            </button>
+            <div className="flex items-center gap-4">
+              <button onClick={() => setPrivacyOpen(true)} className={linkClass}>
+                {t('footer.privacy')}
+              </button>
+              <span className="text-primary-foreground/20">|</span>
+              <button onClick={() => setGdprOpen(true)} className={linkClass}>
+                {t('footer.gdpr')}
+              </button>
+            </div>
           </div>
         </div>
       </footer>
 
+      {/* Privacy Policy Dialog */}
       <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-xl font-display">{t('privacy.title')}</DialogTitle>
-            <DialogDescription className="sr-only">
-              {t('privacy.title')}
-            </DialogDescription>
+            <DialogDescription className="sr-only">{t('privacy.title')}</DialogDescription>
           </DialogHeader>
           <div className="space-y-4 text-sm text-foreground/80 font-body leading-relaxed">
             <p>{t('privacy.admin')}</p>
-
             {privacySections.map((section) => (
               <div key={section}>
                 <h3 className="font-semibold text-foreground">{t(`privacy.${section}.title`)}</h3>
@@ -88,6 +93,25 @@ const Footer: React.FC = () => {
                 {t(`privacy.${section}.list`) !== `privacy.${section}.list` && (
                   <p className="whitespace-pre-line mt-1">{t(`privacy.${section}.list`)}</p>
                 )}
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* GDPR / RODO Dialog */}
+      <Dialog open={gdprOpen} onOpenChange={setGdprOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-display">{t('gdpr.title')}</DialogTitle>
+            <DialogDescription className="sr-only">{t('gdpr.title')}</DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 text-sm text-foreground/80 font-body leading-relaxed">
+            <p>{t('gdpr.intro')}</p>
+            {gdprSections.map((section) => (
+              <div key={section}>
+                <h3 className="font-semibold text-foreground">{t(`gdpr.${section}.title`)}</h3>
+                <p className="whitespace-pre-line">{t(`gdpr.${section}.text`)}</p>
               </div>
             ))}
           </div>
