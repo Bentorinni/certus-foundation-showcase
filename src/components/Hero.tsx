@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.1] mb-6 sm:mb-8 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.1] mb-6 sm:mb-8 drop-shadow-lg uppercase">
                 {t('hero.title')}
               </h1>
             </AnimatedSection>
