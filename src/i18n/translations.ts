@@ -18,8 +18,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Kontakt',
     
     // Hero
-    'hero.title': 'Twój Partner na Polskim Rynku Nieruchomości',
-    'hero.subtitle': 'Profesjonalne pośrednictwo, organizacja inwestycji i zarządzanie nieruchomościami na terenie całej Polski. Pomagamy zagranicznym partnerom w ekspansji i inwestycjach.',
+    'hero.title': 'Twój Partner na Europejskim Rynku Nieruchomości',
+    'hero.subtitle': 'Profesjonalne pośrednictwo, organizacja inwestycji i zarządzanie nieruchomościami na terenie całej Europy. Pomagamy zagranicznym partnerom w ekspansji i inwestycjach.',
     'hero.cta': 'Skontaktuj się z nami',
     'hero.cta2': 'Poznaj nasze usługi',
 
