@@ -4,6 +4,7 @@ import AnimatedSection from '../components/AnimatedSection';
 import { Phone, Mail, MapPin, ArrowLeft, User, Building2, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
+import logo from '../assets/logo.png';
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -13,13 +14,16 @@ const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const TeamsIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M20.625 8.04h-7.5c-.621 0-1.125.504-1.125 1.125v9.375c0 .621.504 1.125 1.125 1.125h7.5c.621 0 1.125-.504 1.125-1.125V9.165c0-.621-.504-1.125-1.125-1.125zM22.5 5.79v0c0 1.035-.84 1.875-1.875 1.875h-.375V5.79c0-.207.168-.375.375-.375s.375.168.375.375zm-1.875-2.25h.375c.207 0 .375.168.375.375v1.5h-.375c-.621 0-1.125-.504-1.125-1.125s.504-1.125 1.125-1.125v0c-.621 0-1.125.504-1.125 1.125v1.5h-.375c-.207 0-.375-.168-.375-.375v-1.5c0-.621.504-1.125 1.125-1.125h1.5c.207 0 .375.168.375.375v.75h-.75v-.375c0-.207-.168-.375-.375-.375zM8.625 5.79H1.125C.504 5.79 0 6.294 0 6.915v9.375c0 .621.504 1.125 1.125 1.125h7.5c.621 0 1.125-.504 1.125-1.125V6.915c0-.621-.504-1.125-1.125-1.125z"/>
+    <path d="M20.625 8.04h-7.5c-.621 0-1.125.504-1.125 1.125v9.375c0 .621.504 1.125 1.125 1.125h7.5c.621 0 1.125-.504 1.125-1.125V9.165c0-.621-.504-1.125-1.125-1.125z"/>
+    <path d="M22.5 5.79c0 1.035-.84 1.875-1.875 1.875h-.375V5.79c0-.207.168-.375.375-.375s.375.168.375.375z"/>
+    <path d="M20.625 3.54h.375c.207 0 .375.168.375.375v1.5h-.375c-.621 0-1.125-.504-1.125-1.125s.504-1.125 1.125-1.125z"/>
+    <path d="M8.625 5.79H1.125C.504 5.79 0 6.294 0 6.915v9.375c0 .621.504 1.125 1.125 1.125h7.5c.621 0 1.125-.504 1.125-1.125V6.915c0-.621-.504-1.125-1.125-1.125z"/>
     <path d="M10.5 14.79v-5.25c0-.621.504-1.125 1.125-1.125h.375v7.5h-.375c-.621 0-1.125-.504-1.125-1.125z"/>
   </svg>
 );
 
 const ContactPage: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const contactData = {
     name: 'Jarosław Dziedzic',
@@ -88,10 +92,13 @@ const ContactPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-primary text-primary-foreground">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md shadow-lg border-b border-border/20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md shadow-lg border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-20">
             <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
+              <div className="h-9 w-9 sm:h-12 sm:w-12 rounded-full flex items-center justify-center p-0.5 sm:p-1 logo-float-3d">
+                <img src={logo} alt="Fundus Certus" className="h-full w-full object-contain" />
+              </div>
               <span className="text-lg sm:text-3xl font-display font-extrabold tracking-tight">
                 <span className="text-primary-foreground">FUNDUS</span>
                 <span className="text-gradient-gold"> CERTUS</span>
@@ -129,16 +136,16 @@ const ContactPage: React.FC = () => {
 
           {/* Contact person card */}
           <AnimatedSection delay={0.1}>
-            <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 mb-8 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary border border-border mb-4">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 mb-8 text-center backdrop-blur-sm">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/20 border border-white/10 mb-4">
                 <User className="w-8 h-8 text-accent" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-display font-bold mb-1">{contactData.name}</h2>
+              <h2 className="text-xl sm:text-2xl font-display font-bold mb-1 text-primary-foreground">{contactData.name}</h2>
               <div className="flex items-center justify-center gap-2 text-accent font-semibold mb-4">
                 <Building2 className="w-4 h-4" />
                 <span className="uppercase tracking-wide text-sm">{contactData.company}</span>
               </div>
-              <p className="text-muted-foreground font-body text-sm flex items-center justify-center gap-2">
+              <p className="text-primary-foreground/60 font-body text-sm flex items-center justify-center gap-2">
                 <MapPin className="w-4 h-4 text-accent" />
                 {contactData.address}
               </p>
@@ -158,13 +165,13 @@ const ContactPage: React.FC = () => {
                     key={index}
                     href={option.href}
                     {...linkProps}
-                    className="group flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-accent/50 transition-all duration-300"
+                    className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-accent/50 transition-all duration-300"
                   >
-                    <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-secondary shrink-0">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-secondary/20 shrink-0">
                       <Icon className="w-6 h-6 text-accent" />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-xs text-muted-foreground font-body uppercase tracking-wide">
+                      <p className="text-xs text-primary-foreground/50 font-body uppercase tracking-wide">
                         {option.label}
                       </p>
                       <p className="text-sm font-semibold text-primary-foreground font-body truncate group-hover:text-accent transition-colors">
@@ -191,7 +198,7 @@ const ContactPage: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary border-t border-border/20 py-8">
+      <footer className="border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm text-primary-foreground/50 font-body">
             © {new Date().getFullYear()} FUNDUS CERTUS. {t('footer.rights')}
