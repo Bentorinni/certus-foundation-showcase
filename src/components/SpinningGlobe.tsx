@@ -117,7 +117,7 @@ const SpinningGlobe: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="w-full h-full" role="img" aria-label="Animowany glob technologiczny — międzynarodowy zasięg Fundus Certus" />;
+  return <canvas ref={canvasRef} className="w-full h-full" />;
 };
 
 export default SpinningGlobe;

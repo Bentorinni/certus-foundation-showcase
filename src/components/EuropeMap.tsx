@@ -77,8 +77,6 @@ const EuropeMap: React.FC = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ shapeRendering: "geometricPrecision" }}
-        role="img"
-        aria-label="Mapa Europy z siecią połączeń biznesowych Fundus Certus"
       >
         {/* Connection lines between cities */}
         {connections.map(([a, b], i) => (

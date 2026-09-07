@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
@@ -12,24 +11,22 @@ import SalesFunnel4 from '../components/SalesFunnel4';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import CookieConsent from '../components/CookieConsent';
 
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen pt-14 sm:pt-20">
-        <Navbar />
-        <Hero />
-        <Stats />
-        <About />
-        <Services />
-        <SalesFunnel1 />
-        <SalesFunnel3 />
-        <Testimonials />
-        <SalesFunnel2 />
-        <SalesFunnel4 />
-        <Contact />
-        <Footer />
-        <CookieConsent />
+      <Navbar />
+      <Hero />
+      <Stats />
+      <About />
+      <Services />
+      <SalesFunnel1 />
+      <SalesFunnel3 />
+      <Testimonials />
+      <SalesFunnel2 />
+      <SalesFunnel4 />
+      <Contact />
+      <Footer />
     </div>
   );
 };

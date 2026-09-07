@@ -28,7 +28,7 @@ const Services: React.FC = () => {
   );
 
   return (
-    <section id="services" aria-label="Usługi" className="py-24 lg:py-32 bg-secondary">
+    <section id="services" className="py-24 lg:py-32 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -38,7 +38,7 @@ const Services: React.FC = () => {
             </span>
             <div className="h-px w-8 bg-gradient-gold" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
             {t('services.title')}
           </h2>
         </AnimatedSection>

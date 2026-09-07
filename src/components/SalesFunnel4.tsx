@@ -31,7 +31,7 @@ const SalesFunnel4: React.FC = () => {
             </span>
             <div className="h-px w-8 bg-gradient-gold" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4 uppercase">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
             {t('funnel4.title')}
           </h2>
           <p className="text-white/50 font-body max-w-2xl mx-auto">{t('funnel4.subtitle')}</p>
