@@ -43,7 +43,7 @@ const Testimonials: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-gradient-dark relative overflow-hidden">
+    <section id="testimonials" aria-label="Opinie klientów" className="py-24 lg:py-32 bg-gradient-dark relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -53,7 +53,7 @@ const Testimonials: React.FC = () => {
             </span>
             <div className="h-px w-8 bg-gradient-gold" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white uppercase">
             {t('testimonials.title')}
           </h2>
         </AnimatedSection>
@@ -85,7 +85,7 @@ const Testimonials: React.FC = () => {
                       </div>
                     )}
                     <div>
-                      <p className="font-semibold text-sm font-body text-white">{item.name}</p>
+                      <p className="font-semibold text-sm font-body text-white notranslate" translate="no">{item.name}</p>
                       <p className="text-xs text-white/40 font-body">
                         {item.isCompany
                           ? (language === 'pl' ? 'Firma' : language === 'de' ? 'Unternehmen' : language === 'it' ? 'Azienda' : language === 'ru' ? 'Компания' : 'Company')

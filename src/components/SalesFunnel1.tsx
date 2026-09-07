@@ -34,7 +34,7 @@ const SalesFunnel1: React.FC = () => {
                 {t('funnel1.tag')}
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6 leading-tight uppercase">
               {t('funnel1.title')}
             </h2>
             <p className="text-white/50 font-body text-lg mb-8 max-w-lg">{t('funnel1.subtitle')}</p>
@@ -51,18 +51,17 @@ const SalesFunnel1: React.FC = () => {
           <div className="space-y-5">
             {steps.map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.2} direction="right">
-                <div className="group relative flex items-center gap-5 glass rounded-xl p-6 transition-all duration-500 md:hover:border-accent/40 md:hover:shadow-[0_0_30px_hsl(142_100%_50%/0.1)]">
+                <div className="relative flex items-center gap-5 glass rounded-xl p-6 cursor-default">
                   {/* Left neon bar */}
-                  <div className="absolute left-0 top-3 bottom-3 w-1 rounded-full bg-accent/60 group-hover:bg-accent group-hover:shadow-[0_0_12px_hsl(142_100%_50%/0.6)] transition-all duration-500" />
+                  <div className="absolute left-0 top-1/4 bottom-1/4 w-1 rounded-full bg-accent/60" />
 
-                  <div className="ml-3 flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
+                  <div className="ml-3 flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
                     <step.icon className="w-7 h-7 text-accent" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-display font-semibold text-white mb-1">{step.title}</h3>
                     <p className="text-white/45 font-body text-sm leading-relaxed">{step.desc}</p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-accent/30 flex-shrink-0 group-hover:text-accent/60 group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </AnimatedSection>
             ))}

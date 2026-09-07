@@ -14,7 +14,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 lg:py-32 bg-background">
+    <section id="about" aria-label="O firmie" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile layout: text + map integrated */}
         <div className="lg:hidden">
@@ -25,7 +25,7 @@ const About: React.FC = () => {
                 {t('about.tag')}
               </span>
             </div>
-            <h2 className="text-3xl font-display font-bold leading-tight mb-6">
+            <h2 className="text-3xl font-display font-bold leading-tight mb-6 uppercase">
               {t('about.title')}
             </h2>
           </AnimatedSection>
@@ -84,7 +84,7 @@ const About: React.FC = () => {
                   {t('about.tag')}
                 </span>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold leading-tight mb-8">
+              <h2 className="text-4xl lg:text-5xl font-display font-bold leading-tight mb-8 uppercase">
                 {t('about.title')}
               </h2>
             </AnimatedSection>

@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-primary">
+    <section id="home" aria-label="Strona główna" className="relative min-h-screen flex items-center overflow-hidden bg-primary">
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary" />
       <div
@@ -33,14 +33,14 @@ const Hero: React.FC = () => {
             <AnimatedSection delay={0.1}>
               <div className="flex items-center gap-2 mb-8 justify-center lg:justify-start">
                 <div className="h-px w-12 bg-gradient-gold" />
-                <span className="text-accent text-sm font-semibold tracking-[0.2em] uppercase font-body">
+                <span className="text-accent text-sm font-semibold tracking-[0.2em] uppercase font-body notranslate" translate="no">
                   Fundus Certus
                 </span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.1] mb-6 sm:mb-8 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-[1.1] mb-6 sm:mb-8 drop-shadow-lg uppercase">
                 {t('hero.title')}
               </h1>
             </AnimatedSection>

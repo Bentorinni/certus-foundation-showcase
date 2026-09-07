@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Language, languageNames } from '../i18n/translations';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
-import logo from '../assets/logo.png';
+import SpinningGlobe from './SpinningGlobe';
 
 const Navbar: React.FC = () => {
   const { t, language, setLanguage } = useLanguage();
@@ -41,19 +41,15 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md shadow-lg border-b border-border/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md shadow-lg border-b border-border/20" aria-label="Nawigacja główna">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-20">
           {/* Logo */}
-          <button onClick={() => scrollTo('#home')} className="flex items-center gap-2 sm:gap-3 group">
-            <div className="h-9 w-9 sm:h-16 sm:w-16 rounded-full flex items-center justify-center p-0.5 sm:p-1 logo-float-3d">
-              <img
-                src={logo}
-                alt="Fundus Certus"
-                className="h-full w-full object-contain"
-              />
+          <button onClick={() => scrollTo('#home')} className="flex items-center gap-2 sm:gap-3 group" aria-label="Fundus Certus — strona główna">
+            <div className="h-9 w-9 sm:h-14 sm:w-14 flex items-center justify-center">
+              <SpinningGlobe />
             </div>
-            <span className="text-lg sm:text-3xl font-display font-extrabold tracking-tight">
+            <span className="text-lg sm:text-3xl font-display font-extrabold tracking-tight notranslate" translate="no">
               <span className="text-primary-foreground">FUNDUS</span>
               <span className="text-gradient-gold"> CERTUS</span>
             </span>
